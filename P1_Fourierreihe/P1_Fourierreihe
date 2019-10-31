@@ -1,0 +1,49 @@
+\documentclass[a4paper, 12pt]{article}
+
+\setlength\parindent{0pt}
+
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+
+\definecolor{red1}{HTML}{f38181}
+\definecolor{yellow1}{HTML}{fce38a}
+\definecolor{green1}{HTML}{95e1d3}
+\definecolor{blue1}{HTML}{66bfbf}
+
+\newcommand{\holine}{
+  \noindent\rule{\textwidth}{0.618pt}\\[0.021286\paperheight]
+}
+
+\newcommand{\minisec}[1]{ \underline{\textit {#1} } \\[0.021286\paperheight]}
+
+\newcommand{\plotfun}[3]{
+  \vspace{0.021286\paperheight}
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}[
+        axis x line=center,
+        axis y line=center,
+        ]
+        \addplot[draw=red1][domain=#2:#3]{#1};
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+}
+
+\tcbset{colback=white,colframe=red1!100!black,title=Note!,width=0.618\paperwidth,arc=0pt}
+\newcommand{\notebox}[1]{
+
+ \begin{center}
+  \begin{tcolorbox}[]
+   #1 
+  \end{tcolorbox}
+ 
+ \end{center} 
+ 
+}
+
+\begin{document}
+
+\end{document}
