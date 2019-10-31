@@ -1,0 +1,81 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{geometry}
+\geometry{
+ a4paper,
+ total={0.6180339887498948\paperwidth,0.6180339887498948\paperheight},
+ top = 0.1458980337503154\paperheight,
+ bottom = 0.1458980337503154\paperheight
+ }
+\setlength{\jot}{0.013155617496424828\paperheight}
+\linespread{1.1458980337503154}
+
+\setlength{\parskip}{0.013155617496424828\paperheight} % paragraph spacing
+
+\definecolor{red1}{HTML}{f38181}
+\definecolor{yellow1}{HTML}{fce38a}
+\definecolor{green1}{HTML}{95e1d3}
+\definecolor{blue1}{HTML}{66bfbf}
+\definecolor{hsblue}{HTML}{0cb5df}
+\definecolor{hsblueshade}{HTML}{b6e9f5}
+
+\graphicspath{ {./graphics/} }
+
+\newcommand{\holine}{
+  \noindent\rule{\textwidth}{0.618pt}\\[0.021286\paperheight]
+}
+
+\newcommand{\minisec}[1]{ \underline{\textit {#1} } \\[0.021286\paperheight]}
+
+\newcommand{\plotfun}[3]{
+  \vspace{0.021286\paperheight}
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}[
+        axis x line=center,
+        axis y line=center,
+        ]
+        \addplot[draw=red1][domain=#2:#3]{#1};
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+}
+
+\tcbset{colback=white,colframe=red1!100!black,title=Note!,width=0.618\paperwidth,arc=0pt}
+\newcommand{\notebox}[1]{
+
+ \begin{center}
+  \begin{tcolorbox}[]
+   #1 
+  \end{tcolorbox}
+ 
+ \end{center} 
+ 
+}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %\includepdf{Deckblatt.pdf}
+  \includepdf{./titlepage/titlepage.pdf}
+  \clearpage
+  \setcounter{page}{1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Vorbereitungsaufgaben}
+
+\includegraphics[width=\textwidth]{./1_1/1_1_function.pdf}
+
+Tilde actually humblebrag photo booth. Direct trade cray blog chartreuse. +1 chillwave wolf enamel pin crucifix bushwick aesthetic echo park la croix unicorn photo booth church-key poke. Cold-pressed banjo kickstarter fam migas chambray austin vegan bespoke live-edge readymade. Pug kinfolk letterpress pok pok bitters forage migas iPhone chambray yr post-ironic XOXO selfies squid butcher.\\
+
+Marfa ugh hell of drinking vinegar mlkshk, raclette church-key venmo slow-carb before they sold out af bitters raw denim typewriter lo-fi. Cred VHS farm-to-table roof party raw denim fashion axe pickled DIY 8-bit whatever hexagon copper mug. Poutine austin ugh, sustainable humblebrag shaman yr. Viral ennui taiyaki narwhal, truffaut freegan pabst cray street art organic YOLO. Shaman poutine four dollar toast literally cornhole distillery. Quinoa pinterest vinyl, austin meditation waistcoat chia skateboard flannel bushwick.
+\section{Versuchsaufgaben}
+Freegan pork belly beard williamsburg. Pour-over mixtape readymade edison bulb occupy, locavore 8-bit marfa plaid coloring book. Franzen unicorn snackwave, master cleanse post-ironic pickled trust fund jianbing lomo distillery gastropub typewriter. Knausgaard wolf taxidermy pour-over, salvia hot chicken migas ethical next level taiyaki +1.
+
+\end{document}

@@ -6,5 +6,6 @@
 *.bbl
 *.synctex.gz
 *.ods
+*.el
 *Versuch*
 logo.jpg
