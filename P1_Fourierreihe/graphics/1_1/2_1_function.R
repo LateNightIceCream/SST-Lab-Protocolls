@@ -25,7 +25,7 @@ xlabels <- c(0, bquote("-"~over(tau, 2)), bquote(over(tau, 2)), bquote("-"~over(
   #xlabels <- c(xlabels, bquote(.(n)~T))
 #}
 
-function_color <- "#0CB5DF"
+function_color <- "#00b1db"
 
 
 ####################################################################
