@@ -19,7 +19,6 @@
 \includegraphics[width=\textwidth]{./1_1/1_1_function.pdf}
 
 
-%\noindent \textit{Berechnung der Fourierkoeffizienten}
 \begin{gather}
 	\intertext{Hier gilt}
 	x(t) = x(-t), \label{eq:1}\\
@@ -96,14 +95,55 @@
 
 \begin{gather*}
 	\intertext{Für das Tastverhältnis $\frac{\tau}{T} = 0.5$  gilt:}
-	\frac{a_0}{2} = A \left[ \frac{1}{2} - \frac{1}{2}\right] = 0\\
+	\frac{a_0}{2} = A \left[ \frac{1}{2} - \frac{1}{2}\right] = 0,\\
 	a_n = \frac{4 A}{n \pi} \cdot \sin{(n \pi \frac{1}{2})} = \frac{4 A}{n \pi} \cdot \sin{(n \frac{\pi}{2})}\\
-	 = \frac{4 A}{n \pi} \cdot (-1)^{n+1}
+	a_n = \frac{4 A}{n \pi} \cdot (-1)^{n+1}
 \end{gather*}
 
 \begin{figure}[H]
+  \includegraphics[width=\textwidth]{1_1/1_1_AS}
 	\caption{Betragsspektrum von x(t) für $\frac{\tau}{T} = 0.5$}
 \end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{}
+
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{1_2/1_2_function}
+	\caption{x(t) mit dem Gleichanteil X0 im Zeitbereich}
+\end{figure}
+
+\begin{gather*}
+  \intertext{Auswirkungen im Frequenzbereich:}
+  a_n = \frac{2}{T} \int_{T}{(x(t) + X0) \cdot \cos{(n \omega_0 t)}\dif t}\\
+      = \frac{2}{T} \left[  \int_{T}{x(t) \cos{(n\omega_0 t)} \dif t}+
+        \underbrace{\int_T{X0 \cdot
+          \cos{(n \omega_0 t)} \dif t}}_{=0} \right]\\
+  a_n = \frac{2}{T} \int_{T}{x(t) \cdot \cos{(n \omega_0 t)}\dif t}\\
+  \intertext{$\rightarrow$ Im Frequenzbereich finden keine Änderungen statt.}
+  \intertext{$\rightarrow$ Nur der Gleichanteil ändert sich}
+\end{gather*}
+
+\subsection{}
+
+\begin{gather*}
+	\intertext{Für das Tastverhältnis $\frac{\tau}{T} = 0.25$  gilt:}
+	\frac{a_0}{2} = 2 A \left[ \frac{1}{4} - \frac{1}{2}\right] = - A ,\\
+	a_n = \frac{4 A}{n \pi} \cdot \sin{(n \pi \frac{1}{4})}\\
+	a_n = \frac{4 A}{n \pi} \cdot \sin{(n \frac{\pi}{4})}
+\end{gather*}
+
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{1_3/1_3_Reihe}
+	\caption{x(t) als Summe der Einzelschwingungen}
+\end{figure}
+
+
+\subsection{}
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{1_4/1_4_function}
+\end{figure}
+
 
 \section{Versuchsaufgaben}
 
