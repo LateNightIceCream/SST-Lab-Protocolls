@@ -49,7 +49,7 @@ p <- ggplot(data.frame(x=c(0,2), y=c(-2,2)), aes(x=x)) +
 
 delta <- T1
 
-function_color <- "#00dac440"
+function_color <- "#afafaf"
 for (n in -1:1) {
 
   # solid horizontal lines
@@ -84,7 +84,7 @@ for (n in -1:1) {
         geom_segment( x =  tau/2 + n*delta, y = -A+X0, xend = tau/2 + n*delta,  yend = A+X0, color=function_color, linetype="dashed")
 }
 
-arrowColor <- "#00DAC4"
+arrowColor <- "#afafaf"
 p <- p + geom_segment ( x = -T/2, y = -A, xend = -T/2, yend = -A + X0, color = arrowColor, linetype = "solid", arrow = arrow())
 p <- p + annotate( "text", x = -T/2 + 0.75, y = -A/1.618, label = "X0", color = arrowColor, size = 6.18)
 

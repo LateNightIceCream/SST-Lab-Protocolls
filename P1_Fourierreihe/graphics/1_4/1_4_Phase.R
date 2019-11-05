@@ -1,6 +1,6 @@
 library(ggplot2)
 
-outputName   <- "1_4_AS.pdf"
+outputName   <- "1_4_Phase.pdf"
 outputWidth  <- 10
 outputHeight <- 0.618 * outputWidth
 
@@ -8,14 +8,12 @@ outputHeight <- 0.618 * outputWidth
 A   <- 1
 m   <- 15 # number of amplitude values
 
-ylabel <- bquote( "|b"[n]~"| / A" )
+ylabel <- bquote( phi~" /rad" )
 xlabel <- bquote( "f / f"[0] )
-
-
 
 amplifun <- function (n) {
 
-    abs( 2 * A / (n * pi) * cos(n * pi) )
+    2 * A / (n * pi) * cos(n * pi)
 }
 
 deltaX <- 1
@@ -24,26 +22,25 @@ deltaCounter <- 0
 lineCoordinatesX <- c()
 lineCoordinatesY <- c()
 
+print(amplifun(1))
+
 for (i in 1:m) {
 
     deltaCounter <- deltaCounter + deltaX
 
     lineCoordinatesX <- c( lineCoordinatesX, deltaCounter)
-    lineCoordinatesY <- c( lineCoordinatesY, amplifun(i) )
-
+    lineCoordinatesY <- c( lineCoordinatesY, (-1)^(i+1) * 0.301)
 }
 
-maxY <- ceiling(max( lineCoordinatesY ))
-minY <- floor(max( lineCoordinatesY ))
-
-ylim   <- c(0, (maxY+minY)/2 )
+ylim   <- c(-0.5, 0.5)
 xlim   <- c(0, m)
 
-ybreaks <- seq(0, (maxY+minY)/2, 0.1)
+ybreaks <- c(-0.301, 0, 0.301)
 xbreaks <- seq(0,m, 1)
 
+ylabels <- c(bquote("-"~pi), 0, bquote(pi))
 
-hsBlue <- "#00b1db"
+phaseColor <- "#afafaf"
 
 
 plot <- ggplot(data.frame(x=c(0,2), y=c(0,2)), aes(x=x)) +
@@ -56,7 +53,7 @@ plot <- ggplot(data.frame(x=c(0,2), y=c(0,2)), aes(x=x)) +
     xlab(xlabel) +
     ylab(ylabel) +
 
-    scale_y_continuous(limits= ylim, breaks=ybreaks) +
+    scale_y_continuous(limits= ylim, breaks=ybreaks, labels=ylabels) +
     scale_x_continuous(limits= xlim, breaks=xbreaks)
 
 
@@ -69,7 +66,7 @@ for (i in 1:m) {
             y = 0,
             xend = lineCoordinatesX[i],
             yend = lineCoordinatesY[i],
-            color=hsBlue,
+            color=phaseColor,
             linetype="solid", size = linewidth
         )
 

@@ -144,15 +144,20 @@
   \includegraphics[width=\textwidth]{1_4/1_4_function}
 \end{figure}
 
+
+
 \begin{gather}
 	\intertext{Es gilt:}
 	x(-t) = -x(t),\\
 	\intertext{weshalb $x(t)$ eine ungerade Funktion ist. Damit ist}
 	\nonumber
-	a_n = \frac{2}{T} \int_T{x(t) \cdot \cos{(n \omega_0 t)} \dif t} = 0\\[\smallvert]
-	\nonumber
+	a_n = \frac{2}{T} \int_T{x(t) \cdot \cos{(n \omega_0 t)} \dif t} = 0\\
+  \intertext{und}
+	 \nonumber
+  a_0 = \frac{1}{T} \int^{T/2}_{-T/2}{x(t) \dif t} = 0\\[\smallvert]
+\nonumber
 	b_n = \frac{2}{T} \int_T{x(t) \cdot \sin{(n \omega_0 t)} \dif t}\\
-	\nonumber
+ 	\nonumber
 	= \frac{2}{T}
 		\int_{-T/2}^{T/2}{ \frac{A}{T/2} \cdot t \cdot \sin{(n \omega_0 t)} \dif t}\\
 	\nonumber
@@ -179,10 +184,20 @@
 		\cos{(n \pi)}
 	\right]\\
 	\nonumber
-	= -\frac{2 A}{n \pi} (-1)^n\\
-	\nonumber
-	b_n = \frac{2A}{n \pi} \cdot (-1)^{n+1}
+	= -\frac{2 A}{n \pi} (-1)^n
 \end{gather}
+
+\eqbox{b_n = \frac{2A}{n \pi} \cdot (-1)^{n+1}}{0.382\textwidth}
+
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{1_4/1_4_AS}
+  \caption{Betragsamplitudenspektrum von x(t)}
+\end{figure}
+
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{1_4/1_4_Phase}
+  \caption{Phasenspektrum von x(t)}
+\end{figure}
 
 \section{Versuchsaufgaben}
 
@@ -190,12 +205,38 @@
 
 Diagramm eingestellte/gemessene amplitudenwerte
 
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{2_1/scope_0}
+  \caption{Screenshot des Sinussignals auf dem Oszilloskop}
+\end{figure}
+
+
 \subsection{}
 
 \begin{gather*}
-	\intertext{Analytische Bestimmung des Spektrums}
-	a_n = 
+	\intertext{Analytische Bestimmung des Spektrums\\Aus 1.1 ergibt sich:}
+  D = \frac{\tau}{T} = \frac{1}{2}\\
+  \frac{a_0}{2} = 0\\
 \end{gather*}
+\begin{gather*}
+	a_n = \frac{4 \cdot 2 \si{\volt}}{n \pi}\cdot (-1)^{n+1}\\
+\end{gather*}
+
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{2_2/scope_1}
+  \caption{Screenshot des Rechtecksignals auf dem Oszilloskop}
+\end{figure}
+
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{2_2/scope_2_white}
+  \caption{Screenshot des Amplitudenspektrums auf dem Oszilloskop}
+\end{figure}
+
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{2_2/2_2_Amplivergleich}
+  \caption{Vergleich der theoretischen (grau) und gemessenen (blau) Werte }
+\end{figure}
+
 
 \subsection{}
 \subsection{}
