@@ -81,21 +81,21 @@
 \begin{gather*}
 	a_0 = \frac{1}{T} \int_T{x(t) \dif t}\\
 	\intertext{mithilfe von Gl. \ref{eq:1}:}
-	a_0 = \frac{1}{T/2} \left[ \int_{0}^{\tau/2}{...} + \int_{\tau/2}^{T/2}{...} \right]\\
-	= \frac{2 A}{T} \left[ t \bigg\rvert_{0}^{\tau/2} - t \bigg\rvert_{\tau/2}^{T/2}\right]\\
-	= \frac{2 A}{T} \left[ \frac{\tau}{2} - \left( \frac{T}{2} - \frac{\tau}{2} \right)  \right]\\
-	= \frac{2 A}{T} \left[ \tau - \frac{T}{2} \right]\\
-	= 2 A \left[ \frac{\tau}{T} - \frac{1}{2} \right]
+	a_0 = \frac{2}{T/2} \left[ \int_{0}^{\tau/2}{...} + \int_{\tau/2}^{T/2}{...} \right]\\
+	= \frac{4 A}{T} \left[ t \bigg\rvert_{0}^{\tau/2} - t \bigg\rvert_{\tau/2}^{T/2}\right]\\
+	= \frac{4 A}{T} \left[ \frac{\tau}{2} - \left( \frac{T}{2} - \frac{\tau}{2} \right)  \right]\\
+	= \frac{4 A}{T} \left[ \tau - \frac{T}{2} \right]\\
+	= 4 A \left[ \frac{\tau}{T} - \frac{1}{2} \right]
 \end{gather*}
 
-\eqbox{\frac{a_0}{2} = A \left[ \frac{\tau}{T} - \frac{1}{2} \right]}{0.382\textwidth}
+\eqbox{\frac{a_0}{2} = 2 A \left[ \frac{\tau}{T} - \frac{1}{2} \right]}{0.382\textwidth}
 
 
 \holine{\textwidth}
 
 \begin{gather*}
 	\intertext{Für das Tastverhältnis $\frac{\tau}{T} = 0.5$  gilt:}
-	\frac{a_0}{2} = A \left[ \frac{1}{2} - \frac{1}{2}\right] = 0,\\
+	\frac{a_0}{2} = 2 A \left[ \frac{1}{2} - \frac{1}{2}\right] = 0,\\
 	a_n = \frac{4 A}{n \pi} \cdot \sin{(n \pi \frac{1}{2})} = \frac{4 A}{n \pi} \cdot \sin{(n \frac{\pi}{2})}\\
 	a_n = \frac{4 A}{n \pi} \cdot (-1)^{n+1}
 \end{gather*}
@@ -144,7 +144,60 @@
   \includegraphics[width=\textwidth]{1_4/1_4_function}
 \end{figure}
 
+\begin{gather}
+	\intertext{Es gilt:}
+	x(-t) = -x(t),\\
+	\intertext{weshalb $x(t)$ eine ungerade Funktion ist. Damit ist}
+	\nonumber
+	a_n = \frac{2}{T} \int_T{x(t) \cdot \cos{(n \omega_0 t)} \dif t} = 0\\[\smallvert]
+	\nonumber
+	b_n = \frac{2}{T} \int_T{x(t) \cdot \sin{(n \omega_0 t)} \dif t}\\
+	\nonumber
+	= \frac{2}{T}
+		\int_{-T/2}^{T/2}{ \frac{A}{T/2} \cdot t \cdot \sin{(n \omega_0 t)} \dif t}\\
+	\nonumber
+	= \frac{4 A }{T^2}
+		\int_{-T/2}^{T/2}{ t \cdot \sin{(n \omega_0 t)} \dif t}\\
+	\intertext{Partielle Integration:}
+	\nonumber
+	u = t, u' = 1\\
+	\nonumber
+	v' = \sin{(n\omega_0 t)}, v = - \frac{1}{n \omega_0} \cdot \cos{(n\omega_0 t)}\\
+	\nonumber
+	b_n = \frac{4 A}{T^2} \left[ - \frac{1}{n \omega_0} \cdot \left[ t \cos{n\omega_0 t} \right]\bigg\rvert_{-T/2}^{T/2} + \frac{1}{n \omega_0} \int_{-T/2}^{T/2}{ \cos(n \omega_0 t) \dif t  } \right]\\
+	\intertext{mit $\omega_0 = \frac{2 \pi}{T}$}
+	\nonumber
+	= \frac{4 A}{T^2} \left[ 
+	- \frac{1}{n \omega_0} \cdot \left[ \frac{T}{2} \cos{(n \frac{2 \pi T}{T 2})}-(-\frac{T}{2} \cos{(- n \frac{2 \pi T}{T 2})}) \right]+ \frac{1}{n^2 \omega_0^2}\left[ \sin{(n \omega_0 t)} \right]\bigg\rvert_{-T/2}^{T/2}
+	\right]\\
+	\nonumber
+	= \frac{4 A}{T^2} \left[
+	- \frac{1}{n \omega_0} \cdot \left[ \frac{T}{2} \cos{(n \pi)} + \frac{T}{2} \cos{(n \pi)} \right]+ \frac{1}{n^2 \omega_0^2}\underbrace{\left[ \sin{(n \frac{2 \pi}{T} t)} \right]\bigg\rvert_a{-T/2}^{T/2}}_{=0}
+	\right]\\
+	\nonumber
+	= - \frac{4 A}{T^2 n \omega_0} \cdot \frac{2 T }{2} \left[
+		\cos{(n \pi)}
+	\right]\\
+	\nonumber
+	= -\frac{2 A}{n \pi} (-1)^n\\
+	\nonumber
+	b_n = \frac{2A}{n \pi} \cdot (-1)^{n+1}
+\end{gather}
 
 \section{Versuchsaufgaben}
+
+\subsection{}
+
+Diagramm eingestellte/gemessene amplitudenwerte
+
+\subsection{}
+
+\begin{gather*}
+	\intertext{Analytische Bestimmung des Spektrums}
+	a_n = 
+\end{gather*}
+
+\subsection{}
+\subsection{}
 
 \end{document}
