@@ -1,15 +1,17 @@
 library(ggplot2)
 
-outputName   <- "2_2_Amplivergleich.pdf"
+outputName   <- "2_4_Amplivergleich.pdf"
 outputWidth  <- 10
 outputHeight <- 0.618 * outputWidth
 
+data <- read.csv("mess.csv")
+
 # function parametersa
 A   <- 2
-m   <- 10 # number of amplitude values
+m   <- 8 # number of amplitude values
 
-ylabel <- bquote( "|a"[n]~"| / V" )
-xlabel <- bquote( "f / f"[0] )
+ylabel <- bquote( "|"~ Delta ~ "a"[n]~"| / dB" )
+xlabel <- bquote( "n"[1]~"-n"[2])
 
 
 amplifun <- function (n) {
@@ -33,20 +35,19 @@ for (i in 1:m) {
     deltaCounter <- deltaCounter + deltaX
 
     lineCoordinatesX <- c( lineCoordinatesX, deltaCounter)
-    lineCoordinatesY <- c( lineCoordinatesY, amplifun(i) )
+#    lineCoordinatesY <- c( lineCoordinatesY, abs(data$ant) )
 
-    lineCoordinatesY_Measurement <- c( lineCoordinatesY_Measurement, amplifun(i) * 0.5 )
+#    lineCoordinatesY_Measurement <- c( lineCoordinatesY_Measurement, abs(data$anm))
 
 }
 
-maxY <- ceiling(max( lineCoordinatesY ))
-minY <- floor(max( lineCoordinatesY ))
+ylim   <- c(0, 7*1.0381)
+xlim   <- c(0, m+1)
 
-ylim   <- c(0, (maxY+minY)/2)
-xlim   <- c(0, m)
+xlabels <- c("", "1-2", "2-3", "3-4","4-5", "5-6", "6-7", "7-8", "8-9","")
 
-ybreaks <- seq(0, (maxY+minY)/2, 0.2)
-xbreaks <- seq(0,m, 1)
+ybreaks <- seq(0, 10, 1)
+xbreaks <- seq(0, m+1, 1)
 
 
 hsBlue <- "#00b1db"
@@ -64,14 +65,17 @@ plot <- ggplot(data.frame(x=c(0,2), y=c(0,2)), aes(x=x)) +
     ylab(ylabel) +
 
     scale_y_continuous(limits= ylim, breaks=ybreaks) +
-    scale_x_continuous(limits= xlim, breaks=xbreaks)
+    scale_x_continuous(limits= xlim, breaks=xbreaks, labels=xlabels)
 
 
 linewidth <- (1-0.6180339887498948)*10
 
+theodat <- abs(data$ant)
+measdat <- abs(data$anm)
+
 for (i in 1:m) {
 
-   if(lineCoordinatesY[i] < lineCoordinatesY_Measurement[i] ) {
+   if(theodat[i] < measdat[i] ) {
 
        # plot measurement first, then plot theoreticals on top
 
@@ -79,7 +83,7 @@ for (i in 1:m) {
             x = lineCoordinatesX[i],
             y = 0,
             xend = lineCoordinatesX[i],
-            yend = lineCoordinatesY_Measurement[i],
+            yend = measdat[i],
             color=hsBlue,
             linetype="solid", size = linewidth
         )
@@ -88,7 +92,7 @@ for (i in 1:m) {
             x = lineCoordinatesX[i],
             y = 0,
             xend = lineCoordinatesX[i],
-            yend = lineCoordinatesY[i],
+            yend = theodat[i],
             color=theoreticalColor,
             linetype="solid", size = linewidth
         )
@@ -100,7 +104,7 @@ for (i in 1:m) {
             x = lineCoordinatesX[i],
             y = 0,
             xend = lineCoordinatesX[i],
-            yend = lineCoordinatesY[i],
+            yend = theodat[i],
             color=theoreticalColor,
             linetype="solid", size = linewidth
         )
@@ -109,7 +113,7 @@ for (i in 1:m) {
             x = lineCoordinatesX[i],
             y = 0,
             xend = lineCoordinatesX[i],
-            yend = lineCoordinatesY_Measurement[i],
+            yend = measdat[i],
             color=hsBlue,
             linetype="solid", size = linewidth
         )

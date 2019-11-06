@@ -172,11 +172,11 @@
 	\intertext{mit $\omega_0 = \frac{2 \pi}{T}$}
 	\nonumber
 	= \frac{4 A}{T^2} \left[ 
-	- \frac{1}{n \omega_0} \cdot \left[ \frac{T}{2} \cos{(n \frac{2 \pi T}{T 2})}-(-\frac{T}{2} \cos{(- n \frac{2 \pi T}{T 2})}) \right]+ \frac{1}{n^2 \omega_0^2}\left[ \sin{(n \omega_0 t)} \right]\bigg\rvert_{-T/2}^{T/2}
+	- \frac{1}{n \omega_0} \cdot \left[ \frac{T}{2} \cos{(n \frac{2 \pi T}{T^2})}-(-\frac{T}{2} \cos{(- n \frac{2 \pi T}{T^2})}) \right]+ \frac{1}{n^2 \omega_0^2}\left[ \sin{(n \omega_0 t)} \right]\bigg\rvert_{-T/2}^{T/2}
 	\right]\\
 	\nonumber
 	= \frac{4 A}{T^2} \left[
-	- \frac{1}{n \omega_0} \cdot \left[ \frac{T}{2} \cos{(n \pi)} + \frac{T}{2} \cos{(n \pi)} \right]+ \frac{1}{n^2 \omega_0^2}\underbrace{\left[ \sin{(n \frac{2 \pi}{T} t)} \right]\bigg\rvert_a{-T/2}^{T/2}}_{=0}
+	- \frac{1}{n \omega_0} \cdot \left[ \frac{T}{2} \cos{(n \pi)} + \frac{T}{2} \cos{(n \pi)} \right]+ \frac{1}{n^2 \omega_0^2}\underbrace{\left[ \sin{(n \frac{2 \pi}{T} t)} \right]\bigg\rvert_{-T/2}^{T/2}}_{=0}
 	\right]\\
 	\nonumber
 	= - \frac{4 A}{T^2 n \omega_0} \cdot \frac{2 T }{2} \left[
@@ -273,7 +273,7 @@ $f/\si{\kilo\hertz}$ & $a_n / \si{\volt}$ & $b_n / \si{\volt}$ \\ \midrule
 \toprule
 $n_1-n_2$ & $\Delta a_{\textrm{theoretisch}} / \si{\deci\bel}$ & $\Delta a_{\textrm{gemessen}} / \si{\deci\bel}$ & $\Delta a_{\textrm{theoretisch}} - \Delta a_{\textrm{gemessen}}/ \si{\deci\bel}$  \\ \midrule
 1-3       &  -9.229                       & -10                         &   0.771         \\
-3-5       &  -4.444                       & -3,75                       &  0.694          \\
+3-5       &  -4.444                       & -3.75                       &  0.694          \\
 5-7       &  -2.912                      & -2.81                      &     0.102       \\
 7-9       &  -2.004                       & -2.5                        &  0.496          \\ \bottomrule
 \end{tabular}
@@ -354,6 +354,11 @@ $f/\si{\kilo\hertz}$ & $a_n / \si{\volt}$ & $b_n / \si{\volt}$ \\ \midrule
 
 \noindent Aus Abbildung 11 lässt sich erkennen, dass sich bei verringertem Tastverhältnis die Dichte der spektralen Amplituden erhöht, wie es auch erwartet wurde.
 
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{2_3/2_3_Amplivergleich}
+  \caption{Vergleich der theoretischen (grau) und gemessenen (blau) Werte }
+\end{figure}
+
 
 % 2.4
 \subsection{}
@@ -407,5 +412,11 @@ $f/\si{\kilo\hertz}$ & $a_n / \si{\volt}$ & $b_n / \si{\volt}$ \\ \midrule
 \end{figure}
 
 \noindent Wie erwartet fallen die spektralen Amplituden hyperbolisch ($\propto \frac{1}{n}$) ab. Die Abweichungen befinden sich wieder in der gleichen Größenordnung wie bei den Messungen zuvor. 
+
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{2_4/2_4_Amplivergleich}
+  \caption{Vergleich der theoretischen (grau) und gemessenen (blau) Werte }
+\end{figure}
+
 
 \end{document}
