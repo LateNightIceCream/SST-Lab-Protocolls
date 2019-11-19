@@ -16,6 +16,41 @@
 
 \section{Vorbereitungsaufgaben}
 
+\subsection{}
+
+Hier noch ne grafik der funktionen
+
+\begin{gather*}
+  u_3(t) = u_1(t) \cdot u_2(t)\\
+  = (U_0 + U_1 \cos{(\omega_1 t)}) \cdot U_2 \cos{(\omega_2 t)}\\
+  = U_0  \cos{(\omega_2 t)} + U_1 U_2 [ \cos{(\omega_1 t)} \cdot \cos{(
+    \omega_2 t)} ]\\
+  \intertext{mithilfe der Gleichung aus "theoretische Grundlagen"\ ergibt
+    sich}
+  u_3(t)= U_0 \cos{(\omega_2 t)} + \frac{U_1 U_2}{2} \cdot \left[
+    \cos{((\omega_1 - \omega_2)t)} + \cos{((\omega_1 + \omega_2) t)} \right]\\
+  \intertext{Fouriertransformation:}
+  U_3(\omega)= U_0 \cdot \mathcal{F}\{ \cos{(\omega_2 t)} \}+ \frac{U_1 U_2}{2} \cdot \left[
+    \mathcal{F}\{\cos{((\omega_1 - \omega_2)t)}\} +
+    \mathcal{F}\{\cos{((\omega_1+\omega_2) t)}\} \right]
+  \intertext{mit}
+%  \mathcal{F}\{ \cos{(2\pi f_0 t)} \} = \frac{1}{2} [ \delta{(f-f_0) + \delta{(f+f_0)}} ]
+  \mathcal{F}\{ \cos{(\omega_0 t)} \} = \frac{1}{2} [ \delta{(\omega-\omega_0) + \delta{(\omega+\omega_0)}} ]
+  \intertext{ergibt sich}
+\end{gather*}
+
+
+\subsection{}
+
+\subsection{}
+
 \section{Versuchsaufgaben}
+
+\subsection{}
+
+\subsection{}
+
+\subsection{}
+
 
 \end{document}
