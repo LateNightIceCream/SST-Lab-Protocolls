@@ -23,34 +23,67 @@ Hier noch ne grafik der funktionen
 \begin{gather*}
   u_3(t) = u_1(t) \cdot u_2(t)\\
   = (U_0 + U_1 \cos{(\omega_1 t)}) \cdot U_2 \cos{(\omega_2 t)}\\
-  = U_0  \cos{(\omega_2 t)} + U_1 U_2 [ \cos{(\omega_1 t)} \cdot \cos{(
+  = U_0 U_2 \cos{(\omega_2 t)} + U_1 U_2 [ \cos{(\omega_1 t)} \cdot \cos{(
     \omega_2 t)} ]\\
   \intertext{mithilfe der Gleichung aus "theoretische Grundlagen"\ ergibt
     sich}
   u_3(t)= U_0 \cos{(\omega_2 t)} + \frac{U_1 U_2}{2} \cdot \left[
-    \cos{((\omega_1 - \omega_2)t)} + \cos{((\omega_1 + \omega_2) t)} \right]\\
-  \intertext{Fouriertransformation:}
-  U_3(\omega)= U_0 \cdot \mathcal{F}\{ \cos{(\omega_2 t)} \}+ \frac{U_1 U_2}{2} \cdot \left[
-    \mathcal{F}\{\cos{((\omega_1 - \omega_2)t)}\} +
-    \mathcal{F}\{\cos{((\omega_1+\omega_2) t)}\} \right]
-  \intertext{mit}
-%  \mathcal{F}\{ \cos{(2\pi f_0 t)} \} = \frac{1}{2} [ \delta{(f-f_0) + \delta{(f+f_0)}} ]
-  \mathcal{F}\{ \cos{(\omega_0 t)} \} = \frac{1}{2} [ \delta{(\omega-\omega_0) + \delta{(\omega+\omega_0)}} ]
-  \intertext{ergibt sich}
+    \cos{((\omega_1 - \omega_2)t)} + \cos{((\omega_1 + \omega_2) t)} \right]
 \end{gather*}
 
+\begin{gather*}
+	 \intertext{Fouriertransformation:}
+U_3(\omega)= U_0 U_2 \cdot \mathcal{F}\{ \cos{(\omega_2 t)} \}+ \frac{U_1 U_2}{2} \cdot \left[
+\mathcal{F}\{\cos{((\omega_1 - \omega_2)t)}\} +
+\mathcal{F}\{\cos{((\omega_1+\omega_2) t)}\} \right]
+\intertext{mit}
+%  \mathcal{F}\{ \cos{(2\pi f_0 t)} \} = \frac{1}{2} [ \delta{(f-f_0) + \delta{(f+f_0)}} ]
+\mathcal{F}\{ \cos{(\omega_0 t)} \} = \frac{1}{2} [ \delta{(\omega-\omega_0) + \delta{(\omega+\omega_0)}} ]
+\intertext{ergibt sich}
+	\begin{split}
+	U_3(\omega) = \frac{U_0 U_2}{2}\cdot [ \delta(\omega-\omega_2) + \delta(\omega + \omega_2) ] \\ + \frac{U_1 U_2}{4} \cdot [ \delta(\omega-(\omega_1-\omega_2)) \\+ \delta(\omega + \omega_1-\omega_2) \\+ \delta(\omega-(\omega_1+\omega_2)) \\+ \delta(\omega + \omega_1 + \omega_2)]
+	\end{split}
+\intertext{mit den vorgegebenen Werten:}
+	\begin{split}
+U_3(f) = 0.3 \cdot [ \delta(f-4\si{\kilo\hertz} + \delta(f + 4 \si{\kilo\hertz}) ] \\ + \frac{1}{4} \cdot [ \delta(f+3.5 \si{\kilo\hertz}) \\+ \delta(f - 3.5 \si{\kilo\hertz}) \\+ \delta(\omega-4.5 \si{\kilo\hertz}) \\+ \delta(\omega + 4.5 \si{\kilo\hertz})]
+\end{split}
+\end{gather*}
+
+hier noch ne grafik vom spektrum bitte
 
 \subsection{}
 
-\subsection{}
+\subsection{Praktische Anwendungsmöglichkeiten}
+
+Die Multiplikation von Zeitsignalen findet Anwendung in der Nachrichtenübertragung. Dort kann das zu übertragene Signal mit einem \emph{Trägersignal} multipliziert werden, um zum einen das Signal in einen für die Antennentechnik brauchbaren\footnote{Änderung der Übertragungseigenschaften des Signals mit der Frequenz} Frequenzbereich zu bringen und zum anderen das Signal am Empfänger von anderen Signalen in der Frequenz unterscheiden zu können (vgl. 1.1).
+
+Außerdem nutzen Oszilloskope die Multiplikation mit einem Rechtecksignal um ein Fenster des aufgenommenen Signals zu erhalten, welches dann fourieranalysiert werden kann.
 
 \section{Versuchsaufgaben}
 
 \subsection{}
 
-\subsection{}
+Wie in Abbildung x zu sehen, stimmen die ermittelten Frequenzen mit denen der Vorbereitungsaufgabe überein. Durch die limitierte Fensterung und Abtastung des Signals durch das Oszilloskop sieht man keine diskreten Amplitudenlinien, sondern 222
+
+Wie in Abbildung x verschwindet die Frequenz des Träges aus dem Betragsspektrum des übertragenen Signals. Der Gleichanteil in der Nachricht lässt also den Träger erscheinen. 
+
+
+Wird nun das Trägersignal mit einem Gleichanteil versehen, wird die Originalfrequenz des Nachrichtensignals mitübertragen.
+
+
+Erhöht man jetzt die Frequenz des Nachrichtensignals, rücken diese und die untere Frequenz des multiplizierten Signals immer näher zusammen. Die multiplizierten Frequenzen rücken dabei weiter auseinander. Bei einer Frequenz von $2 \,\ \si{\kilo\hertz}$ überlappen sich die Originalfrequenz und die multiplizierte Frequenz und sind nicht mehr unterscheidbar.
+
+Bei Frequenzen, die sehr nahe an der Überschneidungsfrequenz sind (z.B. $1990 \,\ \si{\hertz}\}$) entstehen Schwebungen wie in Abb. x zu sehen.
 
 \subsection{}
+Wie in Abbildung x zu sehen, stimmen die ermittelten Frequenzen mit denen der Vorbereitungsaufgabe überein. Durch die limitierte Fensterung und Abtastung des Signals durch das Oszilloskop sieht man keine diskreten Amplitudenlinien, sondern 222
+
+Bei Frequenzerhöhung rücken, wie auch in Versuchsaufgabe 2.1, die untere multiplizierte Frequenz und die Frequenz des Nachrichtensignals näher aneinander, bis sie sich bei $2 \,\ \si{\kilo\hertz}$ treffen.
+
+Die Zäune können als veschiedene Übertragungsbreiten aufgefasst werden
+
+
+Wie auch in der Versuchsaufgabe 2.1 lässt ein hinzugefügter Gleichanteil im Träger- bzw. Nachrichtensignal die Originalfrequenz des jeweils anderen Signals im Spektrum erscheinen.
 
 
 \end{document}
