@@ -77,13 +77,27 @@ U_3(f) = 0.3 \cdot [ \delta(f-4\si{\kilo\hertz} + \delta(f + 4 \si{\kilo\hertz})
 
 \noindent Fouriertransformation:
 
+Das Trägersignal $u_2(t)$ ist eine \emph{periodische} Rechteckfolge und hat
+demnach ein \emph{diskretes} Spektrum, dessen Einhüllende die $\textrm{Si}$-Funktion
+ist (Abbildung 6).
+
 Die multiplikative Verknüfung der Signale $u_1(t)$ und $u_2(t)$ im Zeitbereich
-lässt sich eine Faltung im Frequenzbereich überführen. Da dies analytisch nicht
-trivial ist, wird hier auf eine grafische Lösung zurückgegriffen.\\ Dazu die Vorüberlegung:
+lässt sich in eine Faltung im Frequenzbereich überführen. Da dies analytisch nicht
+so einfach ist, wird hier auf eine grafische Lösung zurückgegriffen. Dazu die Vorüberlegung:
 
 \begin{gather*}
-  x_1(t) = \delta{(t-T)} \,\ \laplace \,\ {X_1(f) = e^{-j \cdot 2\pi \cdot f \cdot T}}\\ 
+  X_3(f) = X_1(f) * X_2(f) \\
+  X_2(f) = A \cdot \delta{(f-f_0)} \,\ \laplace \,\ {x_2(t) = A e^{j \cdot 2\pi \cdot f_0 \cdot t}}\\ 
+  \intertext{(Verschiebungssatz)}
+  X_3(f) = X_1(f) * A \cdot \delta{(f-f_0)} = A \cdot X_1(f - f_0)
 \end{gather*}
+
+
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{1_2/Si}
+  \caption{Spektrum von $u_2(t)$, Einhüllende ist die Si-Funktion (Betrag) }
+\end{figure}
+
 
 \subsection{Praktische Anwendungsmöglichkeiten}
 
@@ -115,21 +129,42 @@ Frequenzen erkennbar.
 Nach Entfernen des Gleichanteils des Nachrichtensignals verschwindet die Frequenz des
 Träges aus dem Betragsspektrum des übertragenen Signals (Abbildung X). Der Gleichanteil der Nachricht lässt also den Träger erscheinen. 
 
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{2_1/scope_7_blue}
+  \caption{FFT von $u_3(t)$ mit Gleichanteil im Träger}
+\end{figure}
 
 Wird nun das Trägersignal mit einem Gleichanteil versehen, wird die Originalfrequenz des Nachrichtensignals mitübertragen.
 
+Erhöht man jetzt die Frequenz des Nachrichtensignals, rücken diese und die
+untere Frequenz des multiplizierten Signals immer näher zusammen (Abbildung X). Die multiplizierten Frequenzen rücken dabei weiter auseinander. Bei einer Frequenz von $2 \,\ \si{\kilo\hertz}$ überlappen sich die Originalfrequenz und die multiplizierte Frequenz und sind nicht mehr unterscheidbar.
 
-Erhöht man jetzt die Frequenz des Nachrichtensignals, rücken diese und die untere Frequenz des multiplizierten Signals immer näher zusammen. Die multiplizierten Frequenzen rücken dabei weiter auseinander. Bei einer Frequenz von $2 \,\ \si{\kilo\hertz}$ überlappen sich die Originalfrequenz und die multiplizierte Frequenz und sind nicht mehr unterscheidbar.
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{2_1/scope_9_blue}
+  \caption{}
+\end{figure}
 
-Bei Frequenzen, die sehr nahe an der Überschneidungsfrequenz sind (z.B. $1990 \,\ \si{\hertz}\}$) entstehen Schwebungen wie in Abb. x zu sehen.
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{2_1/scope_10_blue}
+  \caption{Zeitsignal bei Annäherung der Frequenzen von $u_1(t)$ und $u_3(t)$}
+\end{figure}
+
+Bei Frequenzen, die sehr nahe an der Überschneidungsfrequenz sind (z.B. $1990
+\,\ \si{\hertz}}$) entstehen Schwebungen im Zeitbereich wie in Abb. x zu sehen.
+
 
 \subsection{}
 Wie in Abbildung x zu sehen, stimmen die ermittelten Frequenzen mit denen der Vorbereitungsaufgabe überein. Durch die limitierte Fensterung und Abtastung des Signals durch das Oszilloskop sieht man keine diskreten Amplitudenlinien, sondern 222
 
 Bei Frequenzerhöhung rücken, wie auch in Versuchsaufgabe 2.1, die untere multiplizierte Frequenz und die Frequenz des Nachrichtensignals näher aneinander, bis sie sich bei $2 \,\ \si{\kilo\hertz}$ treffen.
 
-Die Zäune können als veschiedene Übertragungsbreiten aufgefasst werden
-
+Die periodisch auftretenden Frequenzbreiten um 7777 können z.B. als Sender bei
+einer bestimmten Trägerfrequenz aufgefasst werden, welche zudem eine bestimmte
+Bandbreite für die zu übertragenen Nachrichtensignale benötigen. Die in
+Versuchsaufgabe 1 und 2 dargestellte Problematik der Überlappung von
+Frequenzanteilen zeigt, dass in der Praxis ein minimaler Frequenzabstand zwischen zwei
+Sendern notwendig ist, da sonst kein Filter realisierbar wäre, der es ermöglicht
+die einzelnen Signale in der Frequenz unterscheiden zu können. 
 
 Wie auch in der Versuchsaufgabe 2.1 lässt ein hinzugefügter Gleichanteil im Träger- bzw. Nachrichtensignal die Originalfrequenz des jeweils anderen Signals im Spektrum erscheinen.
 
