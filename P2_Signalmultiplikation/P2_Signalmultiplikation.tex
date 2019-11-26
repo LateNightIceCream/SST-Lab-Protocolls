@@ -62,7 +62,28 @@ U_3(f) = 0.3 \cdot [ \delta(f-4\si{\kilo\hertz} + \delta(f + 4 \si{\kilo\hertz})
   \caption{Amplitudendichtespektrum von $u_3(t)$}
 \end{figure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{}
+
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{1_2/u1_carrier}
+  \caption{$u_1(t)$ und $u_2(t)$}
+\end{figure}
+
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{1_2/u3}
+  \caption{$u_3(t)$ aus der Multiplikation von $u_1(t)$ mit dem Träger $u_2(t)$}
+\end{figure}
+
+\noindent Fouriertransformation:
+
+Die multiplikative Verknüfung der Signale $u_1(t)$ und $u_2(t)$ im Zeitbereich
+lässt sich eine Faltung im Frequenzbereich überführen. Da dies analytisch nicht
+trivial ist, wird hier auf eine grafische Lösung zurückgegriffen.\\ Dazu die Vorüberlegung:
+
+\begin{gather*}
+  x_1(t) = \delta{(t-T)} \,\ \laplace \,\ {X_1(f) = e^{-j \cdot 2\pi \cdot f \cdot T}}\\ 
+\end{gather*}
 
 \subsection{Praktische Anwendungsmöglichkeiten}
 
@@ -74,9 +95,25 @@ Außerdem nutzen Oszilloskope die Multiplikation mit einem Rechtecksignal um ein
 
 \subsection{}
 
-Wie in Abbildung x zu sehen, stimmen die ermittelten Frequenzen mit denen der Vorbereitungsaufgabe überein. Durch die limitierte Fensterung und Abtastung des Signals durch das Oszilloskop sieht man keine diskreten Amplitudenlinien, sondern 222
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{2_1/scope_5_blue}
+  \caption{FFT von $u_3(t)$ analog Aufgabe 1}
+\end{figure}
 
-Wie in Abbildung x verschwindet die Frequenz des Träges aus dem Betragsspektrum des übertragenen Signals. Der Gleichanteil in der Nachricht lässt also den Träger erscheinen. 
+Wie in Abbildung X zu sehen, stimmen die ermittelten Frequenzen mit denen der
+Vorbereitungsaufgabe überein.
+Durch die Limitierungen des Oszilloskops (z.B.
+Fensterung) und der Soundkarte sowie Störeinflüsse sieht man keine exakt
+diskreten Amplitudenlinien, die Maxima sind jedoch klar bei den berechneten
+Frequenzen erkennbar.
+
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{2_1/scope_6_blue}
+  \caption{FFT von $u_3(t)$ ohne Gleichanteil der Nachricht}
+\end{figure}
+
+Nach Entfernen des Gleichanteils des Nachrichtensignals verschwindet die Frequenz des
+Träges aus dem Betragsspektrum des übertragenen Signals (Abbildung X). Der Gleichanteil der Nachricht lässt also den Träger erscheinen. 
 
 
 Wird nun das Trägersignal mit einem Gleichanteil versehen, wird die Originalfrequenz des Nachrichtensignals mitübertragen.
