@@ -39,23 +39,23 @@
   \caption{$u_3(t)$; $u_1(t)$ ist als einhüllende Funktion erkennbar}
 \end{figure}
 
-\begin{gather*}
+\begin{gather}
 	 \intertext{Fouriertransformation:}
 U_3(\omega)= U_0 U_2 \cdot \mathcal{F}\{ \cos{(\omega_2 t)} \}+ \frac{U_1 U_2}{2} \cdot \left[
 \mathcal{F}\{\cos{((\omega_1 - \omega_2)t)}\} +
-\mathcal{F}\{\cos{((\omega_1+\omega_2) t)}\} \right]
+\mathcal{F}\{\cos{((\omega_1+\omega_2) t)}\} \right] \nonumber
 \intertext{mit}
 %  \mathcal{F}\{ \cos{(2\pi f_0 t)} \} = \frac{1}{2} [ \delta{(f-f_0) + \delta{(f+f_0)}} ]
-\mathcal{F}\{ \cos{(\omega_0 t)} \} = \frac{1}{2} [ \delta{(\omega-\omega_0) + \delta{(\omega+\omega_0)}} ]
+\mathcal{F}\{ \cos{(\omega_0 t)} \} = \frac{1}{2} [ \delta{(\omega-\omega_0) + \delta{(\omega+\omega_0)}} ] 
 \intertext{ergibt sich}
 	\begin{split}
 	U_3(\omega) = \frac{U_0 U_2}{2}\cdot [ \delta(\omega-\omega_2) + \delta(\omega + \omega_2) ] \\ + \frac{U_1 U_2}{4} \cdot [ \delta(\omega-(\omega_1-\omega_2)) \\+ \delta(\omega + \omega_1-\omega_2) \\+ \delta(\omega-(\omega_1+\omega_2)) \\+ \delta(\omega + \omega_1 + \omega_2)]
-	\end{split}
+	\end{split} \nonumber
 \intertext{mit den vorgegebenen Werten:}
 	\begin{split}
 U_3(f) = 0.3 \cdot [ \delta(f-4\si{\kilo\hertz} + \delta(f + 4 \si{\kilo\hertz}) ] \\ + \frac{1}{4} \cdot [ \delta(f+3.5 \si{\kilo\hertz}) \\+ \delta(f - 3.5 \si{\kilo\hertz}) \\+ \delta(\omega-4.5 \si{\kilo\hertz}) \\+ \delta(\omega + 4.5 \si{\kilo\hertz})]
-\end{split}
-\end{gather*}
+\end{split} \nonumber
+\end{gather}
 
 \begin{figure}[H]
   \includegraphics[width=\textwidth]{1_1/1_1_spektrum}
@@ -97,7 +97,8 @@ so einfach ist, wird hier auf eine grafische Lösung zurückgegriffen. Dazu die 
   \includegraphics[width=\textwidth]{1_2/Si}
   \caption{Spektrum von $u_2(t)$, Einhüllende ist die Si-Funktion (Betrag) }
 \end{figure}
-
+ 
+Die einzelnen Spektrallinien des Rechtecksignals können in der Faltung beider Funktionen im Frequenzbereich als Dirac-Impulse aufgefasst werden. Da diese sich jeweils bei $n \cdot 4 \, \si{\kilo\hertz}$ wiederholen, wird die Transformation des Nachrichtensignals durch die Faltung um die Frequenz des Trägersignals periodisch verschoben.
 
 \subsection{Praktische Anwendungsmöglichkeiten}
 
@@ -134,14 +135,14 @@ Träges aus dem Betragsspektrum des übertragenen Signals (Abbildung X). Der Gle
   \caption{FFT von $u_3(t)$ mit Gleichanteil im Träger}
 \end{figure}
 
-Wird nun das Trägersignal mit einem Gleichanteil versehen, wird die Originalfrequenz des Nachrichtensignals mitübertragen.
+Wird nun das Trägersignal mit einem Gleichanteil versehen, wird die Originalfrequenz des Nachrichtensignals mitübertragen. Der Gleichanteil des Trägersignals lässt die Frequenz(en) des Nachrichtensignals erscheinen.
 
 Erhöht man jetzt die Frequenz des Nachrichtensignals, rücken diese und die
-untere Frequenz des multiplizierten Signals immer näher zusammen (Abbildung X). Die multiplizierten Frequenzen rücken dabei weiter auseinander. Bei einer Frequenz von $2 \,\ \si{\kilo\hertz}$ überlappen sich die Originalfrequenz und die multiplizierte Frequenz und sind nicht mehr unterscheidbar.
+untere Frequenz des ursprünglich gefalteten Signals immer näher zusammen (Abbildung X). Die beiden ursprünglichen Frequenzen rücken dabei weiter auseinander. Bei einer Frequenz von $2 \,\ \si{\kilo\hertz}$ überlappen sich die Originalfrequenz und die ursprüngliche Faltungsfrequenz und sind nicht mehr unterscheidbar.
 
 \begin{figure}[H]
   \includegraphics[width=\textwidth]{2_1/scope_9_blue}
-  \caption{}
+  \caption{Frequenzen nahe der Überschneidung}
 \end{figure}
 
 \begin{figure}[H]
@@ -150,10 +151,16 @@ untere Frequenz des multiplizierten Signals immer näher zusammen (Abbildung X).
 \end{figure}
 
 Bei Frequenzen, die sehr nahe an der Überschneidungsfrequenz sind (z.B. $1990
-\,\ \si{\hertz}}$) entstehen Schwebungen im Zeitbereich wie in Abb. x zu sehen.
+\,\ \si{\hertz}$) entstehen Schwebungen im Zeitbereich wie in Abb. x zu sehen.
 
 
 \subsection{}
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{2_2/scope_11_blue}
+	\caption{FFT von $u_3(t)$ analog Aufgabe 2}
+\end{figure}
+
 Wie in Abbildung x zu sehen, stimmen die ermittelten Frequenzen mit denen der Vorbereitungsaufgabe überein. Durch die limitierte Fensterung und Abtastung des Signals durch das Oszilloskop sieht man keine diskreten Amplitudenlinien, sondern 222
 
 Bei Frequenzerhöhung rücken, wie auch in Versuchsaufgabe 2.1, die untere multiplizierte Frequenz und die Frequenz des Nachrichtensignals näher aneinander, bis sie sich bei $2 \,\ \si{\kilo\hertz}$ treffen.
