@@ -79,7 +79,7 @@ U_3(f) = 0.3 \cdot [ \delta(f-4\si{\kilo\hertz} + \delta(f + 4 \si{\kilo\hertz})
 
 Das Trägersignal $u_2(t)$ ist eine \emph{periodische} Rechteckfolge und hat
 demnach ein \emph{diskretes} Spektrum, dessen Einhüllende die $\textrm{Si}$-Funktion
-ist (Abbildung 6).
+ist (Abbildung 5).
 
 Die multiplikative Verknüfung der Signale $u_1(t)$ und $u_2(t)$ im Zeitbereich
 lässt sich in eine Faltung im Frequenzbereich überführen. Da dies analytisch nicht
@@ -98,7 +98,27 @@ so einfach ist, wird hier auf eine grafische Lösung zurückgegriffen. Dazu die 
   \caption{Spektrum von $u_2(t)$, Einhüllende ist die Si-Funktion (Betrag) }
 \end{figure}
  
-Die einzelnen Spektrallinien des Rechtecksignals können in der Faltung beider Funktionen im Frequenzbereich als Dirac-Impulse aufgefasst werden. Da diese sich jeweils bei $n \cdot 4 \, \si{\kilo\hertz}$ wiederholen, wird die Transformation des Nachrichtensignals durch die Faltung um die Frequenz des Trägersignals periodisch verschoben.
+Die einzelnen Spektrallinien des Rechtecksignals können in der Faltung beider
+Funktionen im Frequenzbereich als Dirac-Impulse aufgefasst werden. Da diese sich
+jeweils bei $n \cdot 4 \, \si{\kilo\hertz}$ wiederholen, wird die Transformation
+des Nachrichtensignals (Gleichung 1) durch die Faltung um die Frequenz des Trägersignals
+periodisch verschoben und mit der Amplitude der jeweiligen Träger-Impulse gewichtet.
+
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{1_2/Falti_mit_GA_träger_richtig}
+  \caption{Resultierendes Amplitudenspektrum von $u_3(t)$ mit Gleichanteil im Träger}
+\end{figure}
+
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{1_2/Falti_ohne_GA_träger_richtig}
+  \caption{Resultierendes Amplitudenspektrum von $u_3(t)$ ohne Gleichanteil im Träger}
+\end{figure}
+
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{1_2/Falti_mit_GA_nachricht_richtig}
+  \caption{Resultierendes Amplitudenspektrum von $u_3(t)$ mit Gleichanteil in
+    Träger und Nachrichtensignal}
+\end{figure}
 
 \subsection{Praktische Anwendungsmöglichkeiten}
 
@@ -115,9 +135,9 @@ Außerdem nutzen Oszilloskope die Multiplikation mit einem Rechtecksignal um ein
   \caption{FFT von $u_3(t)$ analog Aufgabe 1}
 \end{figure}
 
-Wie in Abbildung X zu sehen, stimmen die ermittelten Frequenzen mit denen der
+Wie in Abbildung 8 zu sehen, stimmen die ermittelten Frequenzen mit denen der
 Vorbereitungsaufgabe überein.
-Durch die Limitierungen des Oszilloskops (z.B.
+Durch Limitierungen des Oszilloskops (z.B.
 Fensterung) und der Soundkarte sowie Störeinflüsse sieht man keine exakt
 diskreten Amplitudenlinien, die Maxima sind jedoch klar bei den berechneten
 Frequenzen erkennbar.
@@ -128,7 +148,7 @@ Frequenzen erkennbar.
 \end{figure}
 
 Nach Entfernen des Gleichanteils des Nachrichtensignals verschwindet die Frequenz des
-Träges aus dem Betragsspektrum des übertragenen Signals (Abbildung X). Der Gleichanteil der Nachricht lässt also den Träger erscheinen. 
+Träges aus dem Betragsspektrum des übertragenen Signals (Abbildung 9). Der Gleichanteil der Nachricht lässt also den Träger erscheinen. 
 
 \begin{figure}[H]
   \includegraphics[width=\textwidth]{2_1/scope_7_blue}
@@ -138,20 +158,24 @@ Träges aus dem Betragsspektrum des übertragenen Signals (Abbildung X). Der Gle
 Wird nun das Trägersignal mit einem Gleichanteil versehen, wird die Originalfrequenz des Nachrichtensignals mitübertragen. Der Gleichanteil des Trägersignals lässt die Frequenz(en) des Nachrichtensignals erscheinen.
 
 Erhöht man jetzt die Frequenz des Nachrichtensignals, rücken diese und die
-untere Frequenz des ursprünglich gefalteten Signals immer näher zusammen (Abbildung X). Die beiden ursprünglichen Frequenzen rücken dabei weiter auseinander. Bei einer Frequenz von $2 \,\ \si{\kilo\hertz}$ überlappen sich die Originalfrequenz und die ursprüngliche Faltungsfrequenz und sind nicht mehr unterscheidbar.
+untere Frequenz des ursprünglich gefalteten Signals immer näher zusammen (Abbildung 11). Die beiden ursprünglichen Frequenzen rücken dabei weiter auseinander. Bei einer Frequenz von $2 \,\ \si{\kilo\hertz}$ überlappen sich die Originalfrequenz und die ursprüngliche Faltungsfrequenz und sind nicht mehr unterscheidbar.
 
 \begin{figure}[H]
-  \includegraphics[width=\textwidth]{2_1/scope_9_blue}
+  \begin{center}
+  \includegraphics[height=0.618\textwidth]{2_1/scope_9_blue}
   \caption{Frequenzen nahe der Überschneidung}
+  \end{center}
 \end{figure}
 
 \begin{figure}[H]
-  \includegraphics[width=\textwidth]{2_1/scope_10_blue}
+  \begin{center}
+  \includegraphics[height=0.618\textwidth]{2_1/scope_10_blue}
   \caption{Zeitsignal bei Annäherung der Frequenzen von $u_1(t)$ und $u_3(t)$}
+  \end{center}
 \end{figure}
 
 Bei Frequenzen, die sehr nahe an der Überschneidungsfrequenz sind (z.B. $1990
-\,\ \si{\hertz}$) entstehen Schwebungen im Zeitbereich wie in Abb. x zu sehen.
+\,\ \si{\hertz}$) entstehen Schwebungen im Zeitbereich (Abbildung 12).
 
 
 \subsection{}
@@ -161,19 +185,49 @@ Bei Frequenzen, die sehr nahe an der Überschneidungsfrequenz sind (z.B. $1990
 	\caption{FFT von $u_3(t)$ analog Aufgabe 2}
 \end{figure}
 
-Wie in Abbildung x zu sehen, stimmen die ermittelten Frequenzen mit denen der Vorbereitungsaufgabe überein. Durch die limitierte Fensterung und Abtastung des Signals durch das Oszilloskop sieht man keine diskreten Amplitudenlinien, sondern 222
+Wie in Abbildung 13 zu sehen, stimmen die ermittelten Frequenzen mit denen der Vorbereitungsaufgabe überein. 
 
-Bei Frequenzerhöhung rücken, wie auch in Versuchsaufgabe 2.1, die untere multiplizierte Frequenz und die Frequenz des Nachrichtensignals näher aneinander, bis sie sich bei $2 \,\ \si{\kilo\hertz}$ treffen.
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[height=0.618\textwidth]{2_2/scope_12_blue}
+	\caption{Bewegung der Frequenzanteile durch Variation der Nachrichtenfrequenz, noch keine Überschneidung}
+\end{center}
+\end{figure}
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[height=0.618\textwidth]{2_2/scope_14_blue}
+	\caption{Bewegung der Frequenzanteile, Überschneidung bei $2 \, \si{\kilo\hertz}$}
+\end{center}
+\end{figure}
 
-Die periodisch auftretenden Frequenzbreiten um 7777 können z.B. als Sender bei
+Bei Frequenzerhöhung rücken, wie auch in Versuchsaufgabe 2.1, die Frequenzen um
+das Trägerzentrum näher auseinander bis sie sich bei (z.B.) $2 \,\
+\si{\kilo\hertz}$ treffen (Abblidung 16).
+
+Die periodisch auftretenden Frequenzbreiten um $n \cdot 4 \, \si{\kilo\hertz}$ können z.B. als Sender bei
 einer bestimmten Trägerfrequenz aufgefasst werden, welche zudem eine bestimmte
 Bandbreite für die zu übertragenen Nachrichtensignale benötigen. Die in
 Versuchsaufgabe 1 und 2 dargestellte Problematik der Überlappung von
 Frequenzanteilen zeigt, dass in der Praxis ein minimaler Frequenzabstand zwischen zwei
-Sendern notwendig ist, da sonst kein Filter realisierbar wäre, der es ermöglicht
+Sendern notwendig ist, da sonst kein Filter realisierbar wäre, das es ermöglicht
 die einzelnen Signale in der Frequenz unterscheiden zu können. 
 
-Wie auch in der Versuchsaufgabe 2.1 lässt ein hinzugefügter Gleichanteil im Träger- bzw. Nachrichtensignal die Originalfrequenz des jeweils anderen Signals im Spektrum erscheinen.
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\textwidth]{2_2/scope_15_blue}
+	\caption{FFT von $u_3(t)$ mit Gleichanteil in der Nachricht}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=\textwidth]{2_2/scope_16_blue}
+	\caption{FFT von $u_3(t)$ ohne Gleichanteil in der Nachricht}
+  \end{center}
+\end{figure}
+Wie auch in der Versuchsaufgabe 2.1 lässt ein hinzugefügter Gleichanteil im
+Träger- bzw. Nachrichtensignal die Originalfrequenz des jeweils anderen Signals
+im Spektrum erscheinen (Abbildung 16 und 17).
 
 
 \end{document}

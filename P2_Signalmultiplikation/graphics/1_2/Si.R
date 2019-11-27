@@ -37,10 +37,10 @@ for(i in 1:m) {
 xlimits <- c(-5, 5)
 xbreaks <- seq(-5, 5, 1)
 xlabels <- xbreaks * 1/T / 1000
-ylimits <- c(-0.382, U2)
+ylimits <- c(-0.1, U2/2)
 
 xlabel <- "f / kHz"
-ylabel <- "U / V"
+ylabel <- bquote("U"[2]~"(f)")
 
 
 hsBlue <- "#00b1db"
