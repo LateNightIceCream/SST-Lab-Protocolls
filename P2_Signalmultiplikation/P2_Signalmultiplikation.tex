@@ -79,9 +79,9 @@ U_3(f) = 0.3 \cdot [ \delta(f-4\si{\kilo\hertz} + \delta(f + 4 \si{\kilo\hertz})
 
 Das Trägersignal $u_2(t)$ ist eine \emph{periodische} Rechteckfolge und hat
 demnach ein \emph{diskretes} Spektrum, dessen Einhüllende die $\textrm{Si}$-Funktion
-ist (Abbildung 5).
+ist (Abbildung 6).
 
-Die multiplikative Verknüfung der Signale $u_1(t)$ und $u_2(t)$ im Zeitbereich
+Die multiplikative Verknüpfung der Signale $u_1(t)$ und $u_2(t)$ im Zeitbereich
 lässt sich in eine Faltung im Frequenzbereich überführen. Da dies analytisch nicht
 so einfach ist, wird hier auf eine grafische Lösung zurückgegriffen. Dazu die Vorüberlegung:
 
@@ -122,7 +122,7 @@ periodisch verschoben und mit der Amplitude der jeweiligen Träger-Impulse gewic
 
 \subsection{Praktische Anwendungsmöglichkeiten}
 
-Die Multiplikation von Zeitsignalen findet Anwendung in der Nachrichtenübertragung. Dort kann das zu übertragene Signal mit einem \emph{Trägersignal} multipliziert werden, um zum einen das Signal in einen für die Antennentechnik brauchbaren\footnote{Änderung der Übertragungseigenschaften des Signals mit der Frequenz} Frequenzbereich zu bringen und zum anderen das Signal am Empfänger von anderen Signalen in der Frequenz unterscheiden zu können (vgl. 1.1).
+Die Multiplikation von Zeitsignalen findet Anwendung in der Nachrichtenübertragung. Dort kann das zu übertragene Signal mit einem \emph{Trägersignal} multipliziert werden, um zum Einen das Signal in einen für die Antennentechnik brauchbaren\footnote{Änderung der Übertragungseigenschaften des Signals mit der Frequenz} Frequenzbereich zu bringen und zum Anderen das Signal am Empfänger von anderen Signalen in der Frequenz unterscheiden zu können (vgl. 1.1).
 
 Außerdem nutzen Oszilloskope die Multiplikation mit einem Rechtecksignal um ein Fenster des aufgenommenen Signals zu erhalten, welches dann fourieranalysiert werden kann.
 
@@ -135,7 +135,7 @@ Außerdem nutzen Oszilloskope die Multiplikation mit einem Rechtecksignal um ein
   \caption{FFT von $u_3(t)$ analog Aufgabe 1}
 \end{figure}
 
-Wie in Abbildung 8 zu sehen, stimmen die ermittelten Frequenzen mit denen der
+Wie in Abbildung 10 zu sehen, stimmen die ermittelten Frequenzen mit denen der
 Vorbereitungsaufgabe überein.
 Durch Limitierungen des Oszilloskops (z.B.
 Fensterung) und der Soundkarte sowie Störeinflüsse sieht man keine exakt
@@ -148,7 +148,7 @@ Frequenzen erkennbar.
 \end{figure}
 
 Nach Entfernen des Gleichanteils des Nachrichtensignals verschwindet die Frequenz des
-Träges aus dem Betragsspektrum des übertragenen Signals (Abbildung 9). Der Gleichanteil der Nachricht lässt also den Träger erscheinen. 
+Träges aus dem Betragsspektrum des übertragenen Signals (Abbildung 11). Der Gleichanteil der Nachricht lässt also den Träger erscheinen. 
 
 \begin{figure}[H]
   \includegraphics[width=\textwidth]{2_1/scope_7_blue}
@@ -158,7 +158,7 @@ Träges aus dem Betragsspektrum des übertragenen Signals (Abbildung 9). Der Gle
 Wird nun das Trägersignal mit einem Gleichanteil versehen, wird die Originalfrequenz des Nachrichtensignals mitübertragen. Der Gleichanteil des Trägersignals lässt die Frequenz(en) des Nachrichtensignals erscheinen.
 
 Erhöht man jetzt die Frequenz des Nachrichtensignals, rücken diese und die
-untere Frequenz des ursprünglich gefalteten Signals immer näher zusammen (Abbildung 11). Die beiden ursprünglichen Frequenzen rücken dabei weiter auseinander. Bei einer Frequenz von $2 \,\ \si{\kilo\hertz}$ überlappen sich die Originalfrequenz und die ursprüngliche Faltungsfrequenz und sind nicht mehr unterscheidbar.
+untere Frequenz des ursprünglich gefalteten Signals immer näher zusammen (Abbildung 13). Die beiden ursprünglichen Frequenzen rücken dabei weiter auseinander. Bei einer Frequenz von $2 \,\ \si{\kilo\hertz}$ überlappen sich die Originalfrequenz und die ursprüngliche Faltungsfrequenz und sind nicht mehr unterscheidbar.
 
 \begin{figure}[H]
   \begin{center}
@@ -175,7 +175,7 @@ untere Frequenz des ursprünglich gefalteten Signals immer näher zusammen (Abbi
 \end{figure}
 
 Bei Frequenzen, die sehr nahe an der Überschneidungsfrequenz sind (z.B. $1990
-\,\ \si{\hertz}$) entstehen Schwebungen im Zeitbereich (Abbildung 12).
+\,\ \si{\hertz}$), entstehen Schwebungen im Zeitbereich (Abbildung 14).
 
 
 \subsection{}
@@ -185,7 +185,7 @@ Bei Frequenzen, die sehr nahe an der Überschneidungsfrequenz sind (z.B. $1990
 	\caption{FFT von $u_3(t)$ analog Aufgabe 2}
 \end{figure}
 
-Wie in Abbildung 13 zu sehen, stimmen die ermittelten Frequenzen mit denen der Vorbereitungsaufgabe überein. 
+Wie in Abbildung 15 zu sehen, stimmen die ermittelten Frequenzen mit denen der Vorbereitungsaufgabe überein. 
 
 \begin{figure}[H]
 \begin{center}
@@ -200,16 +200,16 @@ Wie in Abbildung 13 zu sehen, stimmen die ermittelten Frequenzen mit denen der V
 \end{center}
 \end{figure}
 
-Bei Frequenzerhöhung rücken, wie auch in Versuchsaufgabe 2.1, die Frequenzen um
-das Trägerzentrum näher auseinander bis sie sich bei (z.B.) $2 \,\
+Bei Frequenzerhöhung weichen, wie auch in Versuchsaufgabe 2.1, die Frequenzen um
+das Trägerzentrum auseinander bis sie sich mit anderen bei (z.B.) $2 \,\
 \si{\kilo\hertz}$ treffen (Abblidung 16).
 
 Die periodisch auftretenden Frequenzbreiten um $n \cdot 4 \, \si{\kilo\hertz}$ können z.B. als Sender bei
 einer bestimmten Trägerfrequenz aufgefasst werden, welche zudem eine bestimmte
-Bandbreite für die zu übertragenen Nachrichtensignale benötigen. Die in
+Bandbreite für die zu übertragenden Nachrichtensignale benötigen ($U_1(f)$). Die in
 Versuchsaufgabe 1 und 2 dargestellte Problematik der Überlappung von
 Frequenzanteilen zeigt, dass in der Praxis ein minimaler Frequenzabstand zwischen zwei
-Sendern notwendig ist, da sonst kein Filter realisierbar wäre, das es ermöglicht
+Sendern notwendig ist, da sonst kein Filter realisierbar wäre, das es ermöglicht,
 die einzelnen Signale in der Frequenz unterscheiden zu können. 
 
 \begin{figure}[H]
@@ -227,7 +227,7 @@ die einzelnen Signale in der Frequenz unterscheiden zu können.
 \end{figure}
 Wie auch in der Versuchsaufgabe 2.1 lässt ein hinzugefügter Gleichanteil im
 Träger- bzw. Nachrichtensignal die Originalfrequenz des jeweils anderen Signals
-im Spektrum erscheinen (Abbildung 16 und 17).
+im Spektrum erscheinen (Abbildung 18 und 19).
 
 
 \end{document}
