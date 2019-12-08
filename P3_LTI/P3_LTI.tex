@@ -29,9 +29,64 @@
 
 \subsection{}
 
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{1_2/TP}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{1_2/Ausgangsspektrum}
+\end{figure}
+
+
+Aus der grafischen Betrachtung der Spektren von Ein- und Ausgangssignal und
+unter Berücksichtung der Übergangsfunktion des Tiefpasses lässt sich erkenn,
+dass die Grenzfrequenz des Tiefpasses zwischen $\omega_0$ und $2 \,\omega_0$
+liegen muss, um den Frequenzanteil bei $\omega_0$ durchzulassen und den bei
+$2\,\omega_0$ auszulöschen. Der Faktor $K_1$ ist durch die Skalierung der
+Amplitude beim Durchlauf des Tiefpasses gleich $1/2$.
+
+Der Parameter $\phi$ beschreibt die Phasenverschiebung vom Ausgangssignal zum
+Eingangssignal, welche sich beim idealen Tiefpass linear mit der Frequenz
+ändert. Im Zeitbereich erkennt man dadurch eine Zeitverschiebung $t_0$, wodurch
+$\phi = \omega_0 \cdot t_0$.
+
+\subsection{}
+Das System kann lineare Verzerrungen hervorrufen, da es Frequenzanteile
+unterdrücken oder durchlassen kann pipipipipi
+
+\subsection{}
+Zufällige Signale können durch ihre \emph{Autokorrelation}, welche die Änhlichkeit eines
+Signals mit sich selbst ausdrückt, charakterisiert werden. Idealerweise ist
+diese Ähnlichkeit bei zufälligen Signalen bei jeder Verschiebung ungleich 0 nicht gegeben.
+
+Ideales gaußverteiltes Rauschen besitzt zudem ein \emph{konstantes
+Leistungsdichtespektrum}.
 
 \subsection{}
 
+Idealerweise kann die Übertragungsfunktion eines Systems durch Anregung des
+Systems mit einem \emph{Dirac-Impuls} im Zeitbereich bestimmt werden. Der Dirac-Impuls
+besitzt im Frequenzbereich eine konstante Amplitude (1) über alle Frequenzen.
+Die Auswertung im Frequenzbereich ergibt daher (mit $\Delta(j\omega) = \mathcal{F} (\delta(t))$):
+$$ U_2(j \omega) = G(j \omega) \cdot U_1(j \omega) = G(j \omega) \cdot \Delta(j
+\omega) = G(j \omega)$$
+
+Der demnach ermittelte Betragsgang am Ausgang ist somit gleich der
+Übertragungsfunktion des Systems. Praktisch ist diese Methode jedoch kaum
+möglich, da es schwierig ist einen zeitlich unendlich kurzen Impuls von
+unendlicher Amplitude (hohe Energie) zu
+erzeugen und gleichzeitig Nichtlinearitäten,
+Trägheit/Verzögerungen und Belastbarkeit des zu messenden Systems zu berücksichtigen.
+
+Als praktischere Alternative zum Dirac-Impuls kann man einen \emph{Sprung} auf das
+System geben und 
+
+Eine weitere Möglichkeit ist die diskrete Analyse des Systems bei bestimmten
+Frequenzen, z.B. durch Anregung mit einem \emph{Wobble-Sinus} und die Aufnahme von
+Messpunkten in geeigneten Abständen. Nachteil ist hier die begrenzte Auflösung,
+die unter Umständen problematisch sein kann.
+
 \section{Versuchsaufgaben}
+
 
 \end{document}
