@@ -7,37 +7,24 @@ library(scales)
 width <- 10
 height <- width * 0.618
 
-outputName <- "Box3-1.pdf"
+outputName <- "Box3-2.pdf"
 
-box3_1.dat <- read.csv("Box3-1.csv")
-
-attach(box3_1.dat)
-
-box3_1.dat <- cbind(box3_1.dat, 20*log10(u/1000))
-
-names(box3_1.dat)[3] <- "udB"
+box3_1.dat <- read.csv("Box3-2.csv")
 
 #box3_1.model <- nls( u ~ k2*f^-2, start=list(k2=2))
-modelFun <- udB ~ A+B*exp(K*f)
-box3_1.model <- fitModel(modelFun, data=box3_1.dat, start=c(A=20*log10(100/1000), B=20, K=-0.00002))
+#modelFun <- udB ~ A+B*exp(K*f)
+#box3_1.model <- fitModel(modelFun, data=box3_1.dat, start=c(A=20*log10(100/1000), B=20, K=-0.00002))
 
 #modelFun <- udB ~ A+B*exp(K*f)
 #box3_1.model <- fitModel(modelFun, data=box3_1.dat, start=c(A=100, B=1, K=-0.00001))
 
 #hypFun <- udB ~ J + K/(L+M*f)
-hypFun <- u ~ K+L/(sqrt(1+(2*pi*M*f)^2 ))
-hyp.model <- fitModel(hypFun, data=box3_1.dat, start=c(K=100, L=1000, M=0.00005))
+#hypFun <- u ~ K+L/(sqrt(1+(2*pi*M*f)^2 ))
+#hyp.model <- fitModel(hypFun, data=box3_1.dat, start=c(K=100, L=1000, M=0.00005))
 
-hypFunDB <- udB ~ K+L/(sqrt(1+(2*pi*M*f)^2))
-hypDB.model <- fitModel(hypFunDB, data=box3_1.dat, start=c(K=-20, L=25, M=0.00005))
+hypFunDB <- udB ~ A + B/( sqrt(1 + 1/(C*f)) )
+hypDB.model <- fitModel(hypFunDB, data=box3_1.dat, start=c(A=-25, B=25, C=0.0009) )
 
-#summary(box3_1.model)
-
-max(f)
-min(f)
-
-max(u)
-min(u)
 
 fmax <- 10^6
 deltaf <- 1000
@@ -62,12 +49,12 @@ snacky <- function(f) {
 }
 snackyDB <- function(f) {
 
-    A <- -20
+    A <- -25
     B <- 25
     C <- 1
-    D <- 0.00005
+    D <- 0.0009
 
-    A+B/(sqrt(1+(2*pi*D*f)^2 ))
+    A+B/( sqrt(1 + 1/(D*f)^2 ) )
 
 }
 
@@ -85,15 +72,15 @@ p <- ggplot(data=box3_1.dat, aes(x=f, y=udB)) +
     ylab(ylabel) +
     xlab(xlabel) +
 #geom_smooth(se=FALSE, method="auto", n=2000, color="red2") +
-    scale_x_continuous( trans="log10",breaks = xbreaks, minor_breaks=minor_breaks, labels = trans_format("log10", math_format(10^.x))) +
+   scale_x_continuous( trans="log10",breaks = xbreaks, minor_breaks=minor_breaks, labels = trans_format("log10", math_format(10^.x))) +
 #    geom_path(color = "blue4") +
 #    stat_function(fun=snacky, n=4000)+
-#    stat_function(fun=snackyDB, n=4000)+
+ #   stat_function(fun=snackyDB, n=4000)+
     stat_function(fun=hypDB.model, n=4000, color=hsBlue) +
-    geom_segment(x=0, y=-3, xend=log10(fg), yend=-3, linetype=2, color="grey95")+
-    geom_segment(x=log10(fg), y=-20, xend=log10(fg), yend=-3, linetype=2, color="grey95")+
-    geom_point(color=pointColor) +
-    geom_point(data=cutoffPoint, aes(x=fg, y=db), color=cutoffColor)
+#    geom_segment(x=0, y=-3, xend=log10(fg), yend=-3, linetype=2, color="grey95")+
+#    geom_segment(x=log10(fg), y=-20, xend=log10(fg), yend=-3, linetype=2, color="grey95")+
+    geom_point(color=pointColor)
+#    geom_point(data=cutoffPoint, aes(x=fg, y=db), color=cutoffColor)
 #   stat_function(fun=hyp.model, n=4000, color="red")
 #    stat_function(fun=box3_1.model, n=4000, color=hsBlue)
 

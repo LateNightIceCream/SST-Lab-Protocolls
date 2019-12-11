@@ -87,10 +87,74 @@ die unter Umständen problematisch sein kann.
 
 \section{Versuchsaufgaben}
 
-\subsection{}
+\subsection{Untersuchung von Filterschaltungen}
 
-e
+In der ersten Versuchsaufgabe wurden die Spannungsamplituden $U_2$ der Ausgangssignale der in
+Box 3 enthaltenen 4 Filterschaltungen bei sinusförmigem Eingangssignal mit einer
+Amplitude von $1 \, \si{\volt}$ mit dem Oszilloskop gemessen. Das
+Amplitudenverhältnis $U_2/U_1$ wurde anschließend in $\si{\deci\bel}$
+ausgedrückt, um einfache Aussagen über die jeweile Grenzfrequenz und Filterordnung treffen zu können.
 
+\subsubsection{Box3.1}
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{@{}rrr@{}}
+      \toprule
+      $f / \si{\hertz}$ & $U_2 / \si{\milli\volt}$ & $U_2/U_1 / \si{\deci\bel}$ \\ \midrule
+      500               & 1084                     & 0.70                       \\
+      2000              & 1061                     & 0.51                       \\
+      4000              & 1000                     & 0.00                       \\
+      8000              & 826                      & -1.66                      \\
+      10000             & 750                      & -2.50                      \\
+      11300             & 699                      & -3.11                      \\
+      12000             & 688                      & -3.25                      \\
+      14000             & 627                      & -4.05                      \\
+      20000             & 492                      & -6.16                      \\
+      60000             & 230                      & -12.77                     \\
+      80000             & 180                      & -14.89                     \\
+      100000            & 130                      & -17.72                     \\
+      200000            & 131                      & -17.65                     \\
+      300000            & 129                      & -17.79                     \\
+      400000            & 123                      & -18.20                     \\
+      1000000           & 97                       & -20.26                     \\ \bottomrule
+    \end{tabular}
+    \end{center}
+    \caption{Messwerte des ersten Filters der Box 3}
+\end{table}
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{Messwerte/Box3-1/Box3-1}
+  \caption{Bodediagramm Box3.1}
+\end{figure}
+
+Bei der Versuchsdurchführung wurden die Frequenzen der Messpunkte um die
+Grenzfrequenz herum gewählt, welche vorher für jedes Filter durch Messung einer
+Amplitude von etwa $707 \, \si{\milli\volt}$, also $1/\sqrt{2}$ der
+Eingangsamplitude, gemessen wurde.  
+
+Aus Abbildung 1 lässt sich erkennen, dass es sich
+bei der ersten Schaltung um ein Tiefpassfilter handelt. Die Grenzfrequenz des
+Filters wurde nachträglich mittels Regression (Modellgleichung der Form $u(f) = a + b/\sqrt{1
+  + (k \cdot f)^2}$) bei einer Dämpfung der Amplitude von $3 \, \si{\deci\bel}$ bestimmt.
+
+$$f_{\textrm{g}_{3.1}} = 11837 \,\ \si{\hertz}$$
+
+Handschriftlich wurde dann durch Linearisierung des Filterverlaufs die Filterordnung
+über die Geradensteigung bestimmt (Bei TP n-ter Ordnung circa $-n\cdot 20 \, \si{\deci\bel}/\textrm{Dekade}$ nach der Grenzfrequenz). 
+ 
+\includepdf[pages={1-}, angle=-90]{Messwerte/Filterscan}
+
+\subsubsection{Box3.2}
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{Messwerte/Box3-2/Box3-2}
+  \caption{Bodediagramm Box3.2}
+\end{figure}
+
+\subsubsection{Box3.3}
+
+
+\subsubsection{Box3.4}
 
 \subsection{}
 
