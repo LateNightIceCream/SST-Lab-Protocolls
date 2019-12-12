@@ -41,7 +41,7 @@
 Aus der grafischen Betrachtung der Spektren von Ein- und Ausgangssignal und
 unter Berücksichtigung der Übergangsfunktion des Tiefpasses lässt sich erkennen,
 dass die Grenzfrequenz des Tiefpasses zwischen $\omega_0$ und $2 \,\omega_0$
-liegen muss, um den Frequenzanteil bei $\omega_0$ durchzulassen und bei
+liegen muss, um den Frequenzanteil bei $\omega_0$ durchzulassen und den bei
 $2\,\omega_0$ auszulöschen. Der Faktor $K_1$ ist durch die Skalierung der
 Amplitude beim Durchlauf des Tiefpasses gleich $1/2$.
 
@@ -73,7 +73,7 @@ $$ U_2(j \omega) = G(j \omega) \cdot U_1(j \omega) = G(j \omega) \cdot \Delta(j
 
 Der demnach ermittelte Betragsgang am Ausgang ist somit gleich der
 Übertragungsfunktion des Systems. Praktisch ist diese Methode jedoch kaum
-möglich, da es schwierig ist, einen zeitlich unendlich kurzen Impuls von
+möglich, da es schwierig ist einen zeitlich unendlich kurzen Impuls von
 unendlicher Amplitude (hohe Energie) zu
 erzeugen und gleichzeitig Nichtlinearitäten,
 Trägheit/Verzögerungen und Belastbarkeit des zu messenden Systems zu berücksichtigen.
@@ -82,7 +82,8 @@ Als praktischere Alternative zum Dirac-Impuls kann man einen \emph{Sprung} der H
 
 Eine weitere Möglichkeit ist die diskrete Analyse des Systems bei bestimmten
 Frequenzen, z.B. durch Anregung mit einem \emph{Wobble-Sinus} und die Aufnahme von
-Messpunkten in geeigneten Abständen. Nachteil ist hier die begrenzte Auflösung.
+Messpunkten in geeigneten Abständen. Nachteil ist hier die begrenzte Auflösung,
+die unter Umständen problematisch sein kann.
 
 \section{Versuchsaufgaben}
 
@@ -92,7 +93,7 @@ In der ersten Versuchsaufgabe wurden die Spannungsamplituden $U_2$ der Ausgangss
 Box 3 enthaltenen 4 Filterschaltungen bei sinusförmigem Eingangssignal mit einer
 Amplitude von $1 \, \si{\volt}$ mit dem Oszilloskop gemessen. Das
 Amplitudenverhältnis $U_2/U_1$ wurde anschließend in $\si{\deci\bel}$
-ausgedrückt, um einfache Aussagen über die jeweilige Grenzfrequenz und Filterordnung treffen zu können.
+ausgedrückt, um einfache Aussagen über die jeweile Grenzfrequenz und Filterordnung treffen zu können.
 
 \subsubsection{Box3.1}
 \begin{table}[H]
@@ -172,7 +173,7 @@ kennzeichnen jeweils den Filterwert von $-3 \, \si{\deci\bel}$ bei der Grenzfreq
 	\includegraphics[width=\textwidth]{Messwerte/Box3-2/Box3-2}
   \caption{Bodediagramm Box3.2}
 \end{figure}
-Box3.2 ist, wie in Abbildung 2 zu erkennen, ein Hochpassfilter.
+Box3.2 ist wie in Abbildung 2 zu erkennen ein Hochpassfilter.
 Die Grenzfrequenz ist
 $$f_{\textrm{g}_{3.2}} = 2430 \,\ \si{\hertz}$$
 
@@ -205,7 +206,7 @@ $$f_{\textrm{g}_{3.2}} = 2430 \,\ \si{\hertz}$$
   \caption{Bodediagramm Box3.3}
 \end{figure}
 
-Box3.3 ist, wie in Abbildung 3 zu erkennen, ein Tiefpassfilter.
+Box3.3 ist wie in Abbildung 3 zu erkennen ein Tiefpassfilter.
 Die Grenzfrequenz ist
 $$f_{\textrm{g}_{3.3}} =  1700 \,\ \si{\hertz}$$
 
@@ -240,7 +241,7 @@ $$f_{\textrm{g}_{3.3}} =  1700 \,\ \si{\hertz}$$
   \caption{Bodediagramm Box3.4}
 \end{figure}
 
-Box3.4 ist, wie in Abbildung 4 zu erkennen, ein Tiefpassfilter.
+Box3.4 ist wie in Abbildung 4 zu erkennen ein Tiefpassfilter.
 Die Grenzfrequenz ist
 $$f_{\textrm{g}_{3.4}} =  6070 \,\ \si{\hertz}$$
 
@@ -286,7 +287,7 @@ Leistung des Eingangssignals (siehe Abbildung 5) normiert.
   \caption{Zusammenhang von Rauschleistung und Grenzfrequenz des Tiefpassfilters}
 \end{figure}
 
-Das Ergebnis ist sinnvoll, denn wenn man davon ausgeht, dass weißes Rauschen
+Das Ergebniss ist sinnvoll, denn wenn man davon ausgeht, dass weißes Rauschen
 ein konstantes Leistungsdichtespektrum, also gleiche Energie bei jeder Frequenz,
 aufweist, und man mit Erhöhung der Grenzfrequenz mehr Frequenzanteile im Signal
 zulässt, dann wird auch die Energie des Rauschens pro Zeiteinheit, also dessen
