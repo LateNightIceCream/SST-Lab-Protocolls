@@ -140,7 +140,9 @@ Filters wurde nachträglich mittels Regression (Modellgleichung der Form $u(f) =
 $$f_{\textrm{g}_{3.1}} = 11837 \,\ \si{\hertz}$$
 
 Handschriftlich wurde dann durch Linearisierung des Filterverlaufs die Filterordnung
-über die Geradensteigung bestimmt (Bei TP n-ter Ordnung circa $-n\cdot 20 \, \si{\deci\bel}/\textrm{Dekade}$ nach der Grenzfrequenz). 
+über die Geradensteigung bestimmt (Bei TP n-ter Ordnung circa $-n\cdot 20 \,
+\si{\deci\bel}/\textrm{Dekade}$ nach der Grenzfrequenz). Die roten Punkte
+kennzeichnen jeweils den Filterwert von $-3 \, \si{\deci\bel}$ bei der Grenzfrequenz.
  
 \includepdf[pages={1-}, angle=-90]{Messwerte/Filterscan}
 
@@ -171,6 +173,9 @@ Handschriftlich wurde dann durch Linearisierung des Filterverlaufs die Filterord
 	\includegraphics[width=\textwidth]{Messwerte/Box3-2/Box3-2}
   \caption{Bodediagramm Box3.2}
 \end{figure}
+Box3.2 ist wie in Abbildung 2 zu erkennen ein Hochpassfilter.
+Die Grenzfrequenz ist
+$$f_{\textrm{g}_{3.2}} = 2430 \,\ \si{\hertz}$$
 
 \subsubsection{Box3.3}
 
@@ -197,10 +202,13 @@ Handschriftlich wurde dann durch Linearisierung des Filterverlaufs die Filterord
 \end{table}
 
 \begin{figure}[H]
-	\includegraphics[width=\textwidth]{Messwerte/Box3-2/Box3-2}
-  \caption{Bodediagramm Box3.2}
+	\includegraphics[width=\textwidth]{Messwerte/Box3-3/Box3-3}
+  \caption{Bodediagramm Box3.3}
 \end{figure}
 
+Box3.3 ist wie in Abbildung 3 zu erkennen ein Tiefpassfilter.
+Die Grenzfrequenz ist
+$$f_{\textrm{g}_{3.3}} =  1700 \,\ \si{\hertz}$$
 
 \subsubsection{Box3.4}
 
@@ -229,9 +237,13 @@ Handschriftlich wurde dann durch Linearisierung des Filterverlaufs die Filterord
 \end{table}
 
 \begin{figure}[H]
-	\includegraphics[width=\textwidth]{Messwerte/Box3-2/Box3-2}
-  \caption{Bodediagramm Box3.2}
+	\includegraphics[width=\textwidth]{Messwerte/Box3-4/Box3-4}
+  \caption{Bodediagramm Box3.4}
 \end{figure}
+
+Box3.4 ist wie in Abbildung 4 zu erkennen ein Tiefpassfilter.
+Die Grenzfrequenz ist
+$$f_{\textrm{g}_{3.4}} =  6070 \,\ \si{\hertz}$$
 
 
 \subsection{Rauschsignal an den Filtereingängen}
@@ -240,5 +252,47 @@ Handschriftlich wurde dann durch Linearisierung des Filterverlaufs die Filterord
 	\includegraphics[width=\textwidth]{Messwerte/Rauschen/Rauschen_blue}
   \caption{Screenshot des verwendeten Rauschsignals}
 \end{figure}
+
+Das Rauschsignal wurde mithilfe eines MATLAB-Scripts erzeugt und an die Eingänge
+der Tiefpassfilterschaltungen von Box 3 gelegt. Mit dem Oszilloskop wurde der
+Effektivspannungswert der Ausgangssignale gemessen. Durch Quadrieren dieser
+Werte konnte dann ein Maß für die Rauschleistung geschaffen werden, welche dann
+über die jeweiligen Grenzfrequenzen der Filterschaltungen aufgetragen wurde.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[height=0.618\textwidth]{Messwerte/Rauschen/Box1_blue}
+  \caption{Screenshot des Ausgangssignals von Box3.1}
+  \end{center}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{center}
+	\includegraphics[height=0.618\textwidth]{Messwerte/Rauschen/Box3_blue}
+  \caption{Screenshot des Ausgangssignals von Box3.3}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{Messwerte/Rauschen/Box2_blue}
+  \caption{Screenshot des Ausgangssignals von Box3.4}
+\end{figure}
+
+Aus Abbildung 9 kann mithilfe einer Regressionsgeraden ein linearer Zusammenhang zwischen Rauschleistung und
+Grenzfrequenz festgestellt werden. Die Rauschleistung wurde jeweils auf die
+Leistung des Eingangssignals (siehe Abbildung 5) normiert.
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{Messwerte/Rauschen/rauschleistung}
+  \caption{Zusammenhang von Rauschleistung und Grenzfrequenz des Tiefpassfilters}
+\end{figure}
+
+Das Ergebniss ist sinnvoll, denn wenn man davon ausgeht, dass weißes Rauschen
+ein konstantes Leistungsdichtespektrum, also gleiche Energie bei jeder Frequenz,
+aufweist, und man mit Erhöhung der Grenzfrequenz mehr Frequenzanteile im Signal
+zulässt, dann wird auch die Energie des Rauschens pro Zeiteinheit, also dessen
+Leistung, mit der Grenzfrequenz steigen. 
+
+
 
 \end{document}

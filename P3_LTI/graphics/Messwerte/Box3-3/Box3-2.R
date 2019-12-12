@@ -58,7 +58,7 @@ snackyDB <- function(f) {
 
 }
 
-fg <- 2430
+fg <- 11837
 hsBlue <- "grey70"
 pointColor <- "#00b1db"
 cutoffColor <- "#db0058"
@@ -77,18 +77,18 @@ p <- ggplot(data=box3_1.dat, aes(x=f, y=udB)) +
 #    stat_function(fun=snacky, n=4000)+
  #   stat_function(fun=snackyDB, n=4000)+
     stat_function(fun=hypDB.model, n=4000, color=hsBlue) +
-    geom_segment(x=0, y=-3, xend=log10(fg), yend=-3, linetype=2, color="grey95")+
-    geom_segment(x=log10(fg), y=-25, xend=log10(fg), yend=-3, linetype=2, color="grey95")+
-    geom_point(color=pointColor)+
-    geom_point(data=cutoffPoint, aes(x=fg, y=db), color=cutoffColor)
+#    geom_segment(x=0, y=-3, xend=log10(fg), yend=-3, linetype=2, color="grey95")+
+#    geom_segment(x=log10(fg), y=-20, xend=log10(fg), yend=-3, linetype=2, color="grey95")+
+    geom_point(color=pointColor)
+#    geom_point(data=cutoffPoint, aes(x=fg, y=db), color=cutoffColor)
 #   stat_function(fun=hyp.model, n=4000, color="red")
 #    stat_function(fun=box3_1.model, n=4000, color=hsBlue)
 
-#for(i in 0:10^4) {
+for(i in 0:10^4) {
 
-#    print(paste0(i, ") ", hypDB.model(i)))
+    print(paste0(i, ") ", hypDB.model(i)))
 
-#}
+}
 
 pdf(outputName, width, height)
 p
