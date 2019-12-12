@@ -87,7 +87,7 @@ die unter Umständen problematisch sein kann.
 
 \section{Versuchsaufgaben}
 
-\subsection{Untersuchung von Filterschaltungen}
+\subsection{Analyse von Filterschaltungen}
 
 In der ersten Versuchsaufgabe wurden die Spannungsamplituden $U_2$ der Ausgangssignale der in
 Box 3 enthaltenen 4 Filterschaltungen bei sinusförmigem Eingangssignal mit einer
@@ -166,15 +166,79 @@ Handschriftlich wurde dann durch Linearisierung des Filterverlaufs die Filterord
     \end{center}
     \caption{Messwerte des zweiten Filters der Box 3}
 \end{table}
-\subsubsection{Box3.3}
 
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{Messwerte/Box3-2/Box3-2}
   \caption{Bodediagramm Box3.2}
 \end{figure}
 
+\subsubsection{Box3.3}
+
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{@{}rrr@{}}
+      \toprule
+      $f / \si{\hertz}$ & $U_2 / \si{\milli\volt}$ & $U_2/U_1 / \si{\deci\bel}$ \\ \midrule
+      1     & 988 & -0.10\\
+      500   & 936 & -0.57\\
+      700   & 882 & -1.09\\
+      1000  & 815 & -1.78\\
+      1200  & 777 & -2.19\\
+      1500  & 705 & -3.04\\
+      2000  & 600 & -4.44\\
+      3000  & 456 & -6.82\\
+      6000  & 257 & -11.80\\
+      10000 & 169 & -15.44\\
+      20000 & 102 & -19.83\\
+      30000 & 69  & -23.22\\ \bottomrule
+    \end{tabular}
+  \end{center}
+  \caption{Messwerte des dritten Filters der Box 3}
+\end{table}
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{Messwerte/Box3-2/Box3-2}
+  \caption{Bodediagramm Box3.2}
+\end{figure}
+
+
 \subsubsection{Box3.4}
 
-\subsection{}
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{@{}rrr@{}}
+      \toprule
+      $f / \si{\hertz}$ & $U_2 / \si{\milli\volt}$ & $U_2/U_1 / \si{\deci\bel}$ \\ \midrule
+      100   & 997 & -0.04\\
+      1000  & 984 & -0.14\\
+      3000  & 865 & -1.26\\
+      5000  & 750 & -2.50\\
+      5500  & 717 & -2.89\\
+      6000  & 682 & -3.32\\
+      7000  & 630 & -4.01\\
+      8500  & 555 & -5.11\\
+      10000 & 496 & -6.09\\
+      15000 & 363 & -8.80\\
+      20000 & 285 & -10.90\\
+      40000 & 163 & -15.76\\
+      70000 & 109 & -19.25\\
+      90000 & 91  & -20.82\\ \bottomrule
+    \end{tabular}
+  \end{center}
+  \caption{Messwerte des vierten Filters der Box 3}
+\end{table}
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{Messwerte/Box3-2/Box3-2}
+  \caption{Bodediagramm Box3.2}
+\end{figure}
+
+
+\subsection{Rauschsignal an den Filtereingängen}
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{Messwerte/Rauschen/Rauschen_blue}
+  \caption{Screenshot des verwendeten Rauschsignals}
+\end{figure}
 
 \end{document}
