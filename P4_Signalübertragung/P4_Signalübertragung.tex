@@ -35,12 +35,12 @@ $$f = \frac{1}{T} = \frac{1}{1 \, \si{\micro\second}} = 1 \, \si{\mega\hertz}$$
 \caption{Ersatzschaltbild einer Kupferdoppelader}
 \end{figure}
 
-Die Kupferdoppelader kann im Ersatzschaltbild durch einen Widerstand $R$, einer
-Induktivität $L$, einem Leitwert $G$ und einer Kapazität $C$
+Die Kupferdoppelader kann im Ersatzschaltbild durch einen Widerstand $R$, eine
+Induktivität $L$, einem Leitwert $G$ und eine Kapazität $C$
 modelliert werden, welche alle proportional zur Länge der Leitung sind. Die auf
 die Leitungslänge bezogenen
 Parameter des Ersatzschaltbildes werden in der Leitungstheorie auch
-$Leitungsbeläge$ genannt. \\ Der Widerstand $R$ der Leitung entsteht durch den spezifischen
+\emph{Leitungsbeläge} genannt. \\ Der Widerstand $R$ der Leitung entsteht durch den spezifischen
 Widerstand des Materials $\rho$, der Querschnittsfläche $A$ und der Länge $l$ der Leitung
 nach $$R = \rho \cdot \frac{l}{A}, $$ wobei zu beachten ist, dass 
 die gesamte Leitungslänge, also beide Adern bei der Doppelader, als Länge in die
@@ -49,13 +49,17 @@ Berechnung eingeht. Zudem ist der Widerstandsbelag frequenzabhägig (Skineffekt)
 Da die gesamte Doppelader eine Spule mit nur einer Windung darstellt, tritt eine
 Induktivität $L$ auf. 
 $$ L = (N^2) \cdot \mu \cdot \frac{A}{l} $$
+Praktisch wird weiterhin zwischen einer äußeren Induktivität (magnet.
+Eigenschaften, Geometrie des
+Leiters) und einer inneren Induktivität (Wechselfelder innerhalb des Leiters, Skineffekt) unterschieden
 
 Die Kapazität $C$ entsteht durch die Kondensatorwirkung der zwei dicht
 beeinanderliegenden Adern.
 $$ C = \epsilon \cdot \frac{A}{d}$$
 
 Die dielektrischen Verluste zwischen beiden Adern werden durch den Leitwert $G$
-(Ableitungsbelag) gekennzeichnet.
+(Ableitungsbelag) gekennzeichnet, welcher auch über den Verlustwinkel $\delta$
+der Kapazität des Dielektrikums bestimmt ist.
 
 Durch frequenzabhägige Elemente ($L$, $C$) im Ersatzschaltbild wird die
 Übertragungsfunktion der Doppelader ebenfalls frequenzabhägig und weicht damit
@@ -63,6 +67,42 @@ von einer idealen, frequenzunabhägigen Leitung ab. Aus dem
 Ersatzschaltbild lässt sich das Tiefpassverhalten der Doppelader herleiten.
 Außerdem können durch Bildung eines Schwingkreises unerwünschte Resonanzerscheinungen auftreten.
 
+\subsection{}
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{1_3/Si}
+  \caption{Teil des Spektrums der periodischen 1010-Folge mit der Si-Funktion als Einhüllende}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{1_3/Si_filtered}
+  \caption{Beispielhaftes Spektrum der periodischen 1010-Folge mit TP-Filtercharakteristik der
+    Doppelader}
+\end{figure}
+
+
+Da hier eine periodische Folge gewählt wurde, entsteht ein diskretes
+Amplitudenspektrum, welches durch Fouriersynthese wieder in die Ursprungsfolge
+umgewandelt werden kann. Fehlen nun einige Spektrallinien  durch die
+Tiefpasscharakteristik der Doppelader (in Abb. 3 grau gekennzeichnet), weicht die Folge nach
+der Synthese von der Originalfolge ab (Abb. 4).
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{1_3/loss}
+  \caption{ Auswirkung des spektralen Verlusts im Zeitbereich }
+\end{figure}
+
+
+\subsection{}
+
+\subsection{}
+
+\subsection{}
+
 \section{Versuchsaufgaben}
+
+\subsection{}
+
+\subsection{}
 
 \end{document}
