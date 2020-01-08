@@ -93,15 +93,89 @@ der Synthese von der Originalfolge ab (Abb. 4).
 \end{figure}
 
 
-\subsection{}
+\subsectierbon{}
+
+Wie in Abb. 4 zu sehen, ist die empfangene Rechteckfolge uneindeutiger als die
+Gesendete. Die Wahrscheinlichkeit für eine Fehlinterpretation eines Bits ist
+daher höher, wodurch fehlerhafte Datenübertragungen zustande kommen können.
 
 \subsection{}
 
+Die Grundfrequenz der 1010-Folge ist die Hälfte der Übertragungsrate von $f_1 = 704 \,
+\frac{\si{\kilo\bit}}{\si{\second}}$, da in einer Grundperiode der 1010-Folge
+bei dieser Datenrate theoretisch 2 bits übertragen werden könnten.
+
+
+
+Das auf die Grundfrequenz normierte Amplitudenspektrum ergibt sich mit dem
+Tastverhältnis von $D = 0.5$ zu
+$$\mid \underline{X}_n \mid = A \cdot \frac{1}{2} \cdot \textrm{Si}(n \pi \cdot \frac{1}{2}) $$
+
+
+
+Die periodische 1010-Folge ist zur Messung gut geeignet, da es durch die höchstmögliche Frequenz einer Bitfolge das worst-case-Szenario darstellt.
+
 \subsection{}
+
+Wobbeln ist eine Methode der Frequenzanalyse eines Systems und beschreibt das
+Durchlaufen eines bestimmten Frequenzbereiches mit Sinus-Funktionen. 
+
+\subsection{}
+
+a) Der Netzwerkanalysator misst selbstständig mit einer hohen Auflösung durch
+Wobbeln der Kupferdoppelader. Die Übertragungsfunktion wird danach automatisch dargestellt.
+
+\noindent b) Zur Messung der Übertragungsfunktion wurde die $704 \,
+\textrm{kbit}/\textrm{s}$-Folge gewählt, da der Abstand der Spektrallinien gegenüber der $2
+\, \textrm{Mbit}/\textrm{s}$-Folge geringer ist, was eine höhere Auflösung der
+Messwerte erlaubt.
+
+Die Messung erfolgte durch Senden einer periodischen 1010-Rechteckfolge mit konstanter Amplitude
+durch die Kupferdoppelader. Durch die FFT-Analyse am Oszilloskop wurde das
+gemessene, ausgangsseitige Spektrum mit dem eingangsseitigen Spektrum
+verglichen. Die Differenzen der Amplituden zu den jeweiligen Frequenzen (in
+$\si{\deci\bel}$) stellen die Übertragungsfunktion der Doppelader dar.
 
 \section{Versuchsaufgaben}
 
 \subsection{}
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{Versuch/704kbit Zeitbereich}
+  \caption{Darstellung der 704 kbit/s -Folge im Zeitbereich, gelb:
+    Eingangsseitig, grün: Ausgangsseitig}
+\end{figure}
+
+Aus dem Bild der Signale im Zeitbereich (Abb. 5) lassen sich die
+Phasenverschiebung und Amplitudenänderung des Ausgangssignals erkennen. Das
+Ausgangssignal ist durch die vorherige Umformung (Converter) symmetrisch um 0V (kein Gleichanteil) und
+hat die selbe Frequenz wie das Eingangssignal. Außerdem kann man den Lade-und
+Entladeeinfluss der Doppeladerkapazität erkennen.
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{Versuch/2Mbit 1010 Zeitbereich}
+  \caption{Darstellung der 2 Mbit/s -Folge im Zeitbereich, gelb:
+    Eingangsseitig, grün: Ausgangsseitig}
+\end{figure}
+
+In Abb. 6 wurde die Datenübertragungsrate auf $2 \, \textrm{Mbit/s}$ erhöht. Man
+erkennt die stärkere Amplitudenverringerung des Ausgangssignals bei der höheren Frequenz. 
+
+Zur Ermittlung der Übertragungsfunktion der Doppelader wurde dann die
+FFT-Funktion des Oszilloskops verwendet.
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{Versuch/704kbit FFT mit Peaks}
+  \caption{FFT des Eingangs- und Ausgangssignals mit den Amplitudenwerten}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{2_1/2_1_704kbit_Amplivergleich}
+  \caption{Amplitudenvergleich des Eingangs (gelb)- und Ausgangssignals (grün)}
+\end{figure}
+
+
+
 
 \subsection{}
 
