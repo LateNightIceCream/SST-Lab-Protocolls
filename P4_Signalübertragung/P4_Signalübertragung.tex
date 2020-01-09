@@ -161,7 +161,8 @@ Entladeeinfluss der Doppeladerkapazität erkennen.
 In Abb. 6 wurde die Datenübertragungsrate auf $2 \, \textrm{Mbit/s}$ erhöht. Man
 erkennt die stärkere Amplitudenverringerung des Ausgangssignals bei der höheren Frequenz. 
 
-Zur Ermittlung der Übertragungsfunktion der Doppelader wurde dann die
+\pagebreak 
+\noindent b) Zur Ermittlung der Übertragungsfunktion der Doppelader wurde dann die
 FFT-Funktion des Oszilloskops verwendet.
 
 \begin{figure}[H]
@@ -180,7 +181,32 @@ FFT-Funktion des Oszilloskops verwendet.
   \caption{Übertragungsfunktion aus den Amplitudendifferenzen}
 \end{figure}
 
+In Abb. 8 sind die aus der FFT erhaltenen Amplitudenwerte von Ein- und
+Ausgangssignal zum Vergleich dargestellt.
+
+Die Übertragungsfunktion
+$$ G(f) = \frac{U_2(f)}{U_1(f)} $$
+
+kann durch die Amplitudenmesswerte im logarithmischen Maß als Differenz
+$$G(f) = \textrm{dBm}_{\textrm{Ausgang}}-\textrm{dBm}_{\textrm{Eingang}}$$
+
+\noindent dargestellt werden, wie in Abb. 9 zu sehen.
+Man erkennt die steigende Dämpfung mit der Frequenz, also typisches
+Tiefpassverhalten.
 
 \subsection{}
+
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{Versuch/nwa wobbel 30khz 15mhz}
+  \caption{Mit dem NWA aufgenommene Übertragungsfunktion}
+\end{figure}
+
+Mit dem Netzwerkanalysator konnte die Übertragungsfunktion der Doppelader
+automatisch ermittelt werden. Das Frequenzintervall wurde von $30 \,
+\si{\kilo\hertz}$ bis $15 \, \si{\mega\hertz}$ eingestellt. 
+
+Aus den Abbildungen 9 und 10 lässt sich die Übereinstimmung der durch die beiden
+Messmethoden ermittelten Übertragungsfunktionen feststellen (Bsp: Wert bei 5MHz in beiden ca. -20dB).
 
 \end{document}

@@ -58,7 +58,7 @@ plot <- ggplot(data = dataSchnib, aes(x = x, y=y2) ) +
     scale_y_continuous(limits = ylimits, breaks = ybreaks) +
     scale_x_continuous( limits=xlimits, trans="log10",breaks = xbreaks, minor_breaks=minor_breaks, labels = trans_format("log10", math_format(10^.x))) +
 #    stat_function(fun=snackyDB, n=4000)+
-    stat_function(fun=hypDB.model, n=4000, color=regColor) +
+#    stat_function(fun=hypDB.model, n=4000, color=regColor) +
 #    geom_smooth(method="lm",aes(x=x, y=dif), color = regColor, se=FALSE) +
     geom_point(aes(x=x, y=dif), color=pointColor)
 
